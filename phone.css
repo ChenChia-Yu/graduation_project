@@ -1,0 +1,265 @@
+/* GRID */
+.full-width {
+    width: 100%;
+}
+.fixed-width {
+    width: 100%;
+    margin: auto;
+}
+.col-1{
+    width: calc(100% / 12 * 1);
+}
+.col-2{
+    width: calc(100% / 12 * 2);
+}
+.col-3{
+    width: calc(100% / 12 * 3);
+}
+.col-4{
+    width: calc(100% / 12 * 4);
+}
+.col-5{
+    width: calc(100% / 12 * 5);
+}
+.col-6{
+    width: calc(100% / 12 * 6);
+}
+.col-7{
+    width: calc(100% / 12 * 7);
+}
+.col-8{
+    width: calc(100% / 12 * 8);
+}
+.col-9{
+    width: calc(100% / 12 * 9);
+}
+.col-10{
+    width: calc(100% / 12 * 10);
+}
+.col-11{
+    width: calc(100% / 12 * 11);
+}
+.col-12{
+    width: calc(100% / 12 * 12);
+}
+[class^="col"]{
+    float: left;
+    padding: 15px;
+}
+
+
+/* global */
+.vertical_explore{
+    cursor: pointer;
+}
+
+.explore h5{
+    color:#EEEEEE;
+    font-size: 30px;
+}
+
+.explore h5::before,.explore h5::after{
+    content: "";
+    display: inline-block;
+    background:#334137;
+    height: 20px;
+    width: 20px;
+    transform: rotate(45deg);
+}
+
+.explore h5::before{
+    margin-right: 23pt;
+}
+
+.explore h5::after{
+    margin-left: 23pt;
+}
+
+/* global ----- set background color */
+.about_chiayi,.history,.temple_explore,.god_introduction,.name{
+    background: #55707D;
+}
+
+/* global ----- set font size and color */
+
+.about_chiayi h3,.history h3,.temple_explore h3,.god_introduction h3{
+    font-size: 60px;
+    color:#EEEEEE;
+}
+.about_chiayi p,.history p,.temple_explore p,.name p,.god_introduction p{
+    font-size: 20px;
+    word-break: break-all;
+    color:#EEEEEE;
+}
+
+/* set padding and margin */
+.about_chiayi>div>div,.history>div>div,.temple_explore>div>div,.god_introduction>div>div,.name>div>div{
+    margin-top: 225pt;
+}
+
+/* header */
+
+header{
+    background: #961D16;
+}
+
+header h1{
+    font-size: 120px;
+    color:white;
+
+}
+
+.vertical_explore>div:nth-of-type(3){
+    margin-top:-5px;
+    background: #55707D;
+}
+
+.vertical_explore,.vertical_explore>div{
+    margin:auto;
+}
+
+.vertical_explore{
+    width: 30%;
+}
+
+.vertical_explore>div{
+    display:block;
+    position: relative;
+    height: 20px;
+    width: 20px;
+    transform: rotate(45deg);
+}
+
+.vertical_explore>div:nth-of-type(1){
+    margin-bottom:-5px;
+    background: #55707D;
+}
+
+.vertical_explore>div:nth-of-type(2){
+    height: 15px;
+    background: #334137;
+    z-index:99;
+    width: 15px;
+}
+
+.vertical_explore>h5{
+    color:white;
+    margin-top: 10px;
+}
+
+/* about_chiayi_header */
+
+img.chiayi_temple{
+    width: 30%;
+    display: block;
+    margin: auto;
+}
+
+.turkey{
+    margin-top: 50px;
+    margin-bottom:50px;
+}
+
+.progress{
+    margin:auto;
+    position:relative;
+    width: 30%;
+    border-radius:15px;
+    background: #EEEEEE;
+}
+
+.progress .color{
+    animation:progres 4s infinite linear;
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    /* border-radius: 15px; */
+    background:#961D16;
+}
+
+.click_here{
+    width: 30%;
+    float:right;
+}
+
+.click_here *{
+    padding: 0 !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.delete .triangle{
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 30px 50px 30px;
+    border-color: transparent transparent white transparent;
+    float:right;
+}
+
+.delete p{
+    color:white;
+}
+
+@keyframes progres {
+    0%{
+        width:0%;
+    }
+    100%{
+        width:100%;
+    }
+}
+/* about chiayi */
+
+/* .about_chiayi{
+    background: rgb(230, 230, 230);
+
+} */
+
+
+
+/* history */
+
+
+
+/* temple_explore */
+
+
+
+/* god_introduction */
+
+
+
+/* name */
+
+
+.name img{
+    border-radius: 20px;
+    border: 1px solid #000;
+}
+
+.name h1{
+    float:left;
+    font-size: 100px;
+    color:#EEEEEE;
+}
+
+.name .about_us p{
+    float:left;
+    font-size: 40px;
+}
+
+.name>div>div:nth-of-type(2){
+    margin-top: 0;
+}
+
+/* footer */
+footer{
+    background: #961D16;
+}
+
+footer p{
+    font-size: 20px;
+    color:#EEEEEE;
+}
