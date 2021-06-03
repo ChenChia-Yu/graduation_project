@@ -49,13 +49,107 @@
 
 
 /* global */
-.vertical_explore{
+
+/* set hamburger */
+.hamburger{
+    float:right;
+}
+
+.hamburger>.hamburger_div{
     cursor: pointer;
+    display: inline-block;
+    /* position: relative; */
+    /* display:block; */
+    height: 50px;
+    width: 25%;
+    background: #334137;
+    border-radius: 30px;
+    right:10px;
+}
+
+
+.hamburger>.hamburger_div span{
+    display:inline-block;
+    height: 4px;
+    background:#EEEEEE;
+    position: absolute;
+    width: 60%;
+    margin:auto;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+}
+
+.hamburger>.hamburger_div span::before{
+    content:"";
+    top:-12px;
+    /* width:80%; */
+    background: #EEEEEE;
+    height: 4px;
+    position: absolute;
+    display:inline-block;
+    right:0;
+    left:0;
+    /* margin:auto; */
+}
+
+.hamburger>.hamburger_div span::after{
+    content:"";
+    bottom:-12px;
+    /* width:80%; */
+    background: #EEEEEE;
+    height: 4px;
+    position: absolute;
+    display:inline-block;
+    right:0;
+    left:0;
+}
+
+.hamburger_div:hover~.show{
+    display: block;
+}
+
+header .show:hover{
+    display: block;
+}
+
+header .show{
+    transition: .5s;
+    display:none;
+    background:#EEEEEE ;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    top:70px;
+    right:10px;
+    border-radius:30px;
+    z-index:99;
+}
+
+
+header .show ul{
+    list-style-type: none;
+}
+
+header .show ul li{
+    list-style-type: none;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+header .show ul a{
+    text-align: center;
+    color:#334137;
+    text-decoration: none;
+    font-size: 25px;
 }
 
 .explore h5{
     color:#EEEEEE;
     font-size: 30px;
+    cursor:pointer;
 }
 
 .explore h5::before,.explore h5::after{
@@ -88,6 +182,8 @@
 }
 .about_chiayi p,.history p,.temple_explore p,.name p,.god_introduction p{
     font-size: 20px;
+    padding-left: 10%;
+    padding-right: 10%;
     word-break: break-all;
     color:#EEEEEE;
 }
@@ -95,6 +191,91 @@
 /* set padding and margin */
 .about_chiayi>div>div,.history>div>div,.temple_explore>div>div,.god_introduction>div>div,.name>div>div{
     margin-top: 225pt;
+}
+
+
+/* id loading */
+
+#loading{
+    z-index:999;
+    height: 100%;
+    width:100%;
+    background: #55707D;;
+}
+
+.left_top_title{
+    float:right;    
+}
+
+.left_top_title p{
+    top:17.5px;
+    right:10px;
+    color:white;
+}
+
+.chiayi_temple_div{
+    width: 35%;
+    margin:auto;
+}
+
+img.chiayi_temple{
+    width: 60%;
+    display: block;
+    margin: auto;
+    animation: img_an 4s;
+}
+
+@keyframes img_an {
+    from{
+        transform: translateY(-50px);
+    }
+    to{
+        transform: translateY(0px);
+    }
+    
+}
+
+.turkey{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.chiayi_temple_div .turkey p.loading{
+    font-size: 30px;
+    color:white;
+   
+}
+
+
+.progress{
+    margin:auto;
+    position:relative;
+    width: 100%;
+    height: 14.5px !important;
+    border-radius:15px;
+    background: #EEEEEE;
+}
+
+.progress .color{
+    animation:progres 4s linear forwards;
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    /* border-radius: 15px; */
+    background:#961D16;
+}
+
+.chiayi_temple_div .turkey p.percentage{
+    color:white;
+}
+
+@keyframes progres {
+    0%{
+        width:0%;
+    }
+    100%{
+        width:100%;
+    }
 }
 
 /* header */
@@ -107,6 +288,16 @@ header h1{
     font-size: 120px;
     color:white;
 
+}
+
+header p{
+    font-size: 20px;
+    color:white;
+
+}
+
+.vertical_explore{
+    cursor: pointer;
 }
 
 .vertical_explore>div:nth-of-type(3){
@@ -149,35 +340,8 @@ header h1{
 
 /* about_chiayi_header */
 
-img.chiayi_temple{
-    width: 30%;
-    display: block;
-    margin: auto;
-}
 
-.turkey{
-    margin-top: 50px;
-    margin-bottom:50px;
-}
-
-.progress{
-    margin:auto;
-    position:relative;
-    width: 30%;
-    border-radius:15px;
-    background: #EEEEEE;
-}
-
-.progress .color{
-    animation:progres 4s infinite linear;
-    position: absolute;
-    width: 0%;
-    height: 100%;
-    /* border-radius: 15px; */
-    background:#961D16;
-}
-
-.click_here{
+/* .click_here{
     width: 30%;
     float:right;
 }
@@ -200,16 +364,9 @@ img.chiayi_temple{
 
 .delete p{
     color:white;
-}
+} */
 
-@keyframes progres {
-    0%{
-        width:0%;
-    }
-    100%{
-        width:100%;
-    }
-}
+
 /* about chiayi */
 
 /* .about_chiayi{

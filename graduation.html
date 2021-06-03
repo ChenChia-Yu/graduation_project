@@ -15,26 +15,79 @@
     <title>Document</title>
 </head>
 <body>
+
+    <div id="loading" class="position-fixed">
+        <div class="col-xl-12 col-12">
+            <div class="col-lg-3 col-3">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/FamilyMart_logo.svg/1280px-FamilyMart_logo.svg.png" alt="">
+            </div>
+            <div class="col-lg-3 col-3 left_top_title position-relative">
+                <p class="position-absolute">與嘉義相遇</p>
+            </div>
+        </div>
+        <div class="chiayi_temple_div ">
+            <img class="chiayi_temple" src="chiayi_temple.png" alt="">
+            <div class="turkey clearfix">
+                <p class="t-center loading">loading....</p>
+                <div class="col-lg-12 col-12">
+                    <div class="col-lg-10 col-10">
+                        <div class="progress">
+                            <div ref="divtest" id="divtest" class="color"></div>
+                        </div>
+                    </div>    
+                    <div class="col-lg-2 col-2">
+                        <p class="t-right percentage">0%</p>
+                    </div>
+                </div>
+            </div>
+            <!--    
+                <div class="click_here">
+                    <div class="col-lg-12 col-12">
+                        <div class="col-lg-6 col-6">
+                            <div class="triangle"></div>
+                        </div>
+                        <div class="col-lg-6 col-6">
+                            <p>下一頁按這裡會刪掉</p>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+
     <header class="full-width clearfix" id="header">
         <div class="fixed-width">
-            <div class="col-xl-12 col-6">
-                <div class="col-lg-3">
+            <div class="col-xl-12 col-12">
+                <div class="col-lg-3 col-3">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/FamilyMart_logo.svg/1280px-FamilyMart_logo.svg.png" alt="">
                 </div>
+
+                <div v-if="data1.header.explore==false" class="col-lg-2 col-2 hamburger position-relative">
+                    <div class="hamburger_div position-absolute">
+                        <span></span>
+                    </div>
+                    <div class="show position-absolute">
+                        <ul>
+                            <li><a href="">歷史軌跡</a></li>
+                            <li><a href="">城隍廟介紹</a></li>
+                        </ul>
+                    </div>
+                </div>
+            
             </div>
             <div class="col-xl-12 col-12 vam">
 
-                <template v-if="data1.header.explore==true">
+                <!-- <template v-if="data1.header.explore==true"> -->
 
-                    <div class="col-lg-6 col-12 title">
-                        <h1 class="t-center">{{data1.header.title}}</h1>
+                    <div v-html="data1.header.title" class="col-lg-6 col-12 title">
+                        <!-- <h1 class="t-center">{{data1.header.title}}</h1> -->
                     </div>
 
                     <div class="col-lg-6 col-12 img">
                         <img :src="data1.header.image" alt="">
                     </div>
 
-                </template>
+                <!-- </template> -->
 
                 <div class="col-lg-12 col-12">
                         <div v-if="data1.header.explore==true" class="vertical_explore" v-on:click="explore">
@@ -43,26 +96,6 @@
                             <div></div>
                             <h5 class="t-center">啟程</h5>
                         </div>
-                        <template v-else>
-                            <img class="chiayi_temple" src="chiayi_temple.png" alt="">
-                            <div class="turkey">
-                                <div class="progress">
-                                    <div class="color"></div>
-                                </div>
-                            </div>
-                            <div class="delete clearfix">
-                                <div class="click_here">
-                                    <div class="col-lg-12 col-12">
-                                        <div class="col-lg-6 col-6">
-                                            <div class="triangle"></div>
-                                        </div>
-                                        <div class="col-lg-6 col-6">
-                                            <p>下一頁按這裡會刪掉</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </template>
                 </div>
 
             </div>
@@ -72,23 +105,21 @@
     <div class="full-width clearfix about_chiayi">
         <div class="fixed-width">
             <div class="col-xl-12 col-12 vam">
-                <div class="col-lg-6">
-                    <h3 class="t-center">{{ data1.topic1.title }}</h3>
-                    <p class="t-center">
-                        XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                        XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                        XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                        XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                        XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                        XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                        XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                        XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                    </p>
-                    <div class="explore">
-                        <h5 class="t-center"  v-on:click="explore"><span></span>探索<span></span></h5>
+                <!-- <div class="col-lg-6 col-6"> -->
+                    <!-- <template v-if="">
+                    </template> -->
+                <div :class="data1.topic1.layout_type">
+                    <!-- <h3 class="t-center">{{ data1.topic1.title }}</h3> -->
+                    <div v-html="data1.topic1.title"></div>
+                    <div v-if="data1.topic1.explore == true" class="explore">
+                        <h5 class="t-center"  v-on:click="explore('about_chiayi')"><span></span>探索<span></span></h5>
                     </div>
                 </div>
-                <div class="col-lg-6 col-12">
+
+                <div v-if="data1.topic1.explore==true" class="col-lg-6 col-6">
+                    <img :src="data1.topic1.image" alt="">
+                </div>
+                <div v-else class="col-lg-6 col-6" style="float:right !important">
                     <img :src="data1.topic1.image" alt="">
                 </div>
             </div>
@@ -98,23 +129,13 @@
     <div class="full-width clearfix history">
         <div class="fixed-width">
             <div class="col-xl-12 col-12 vam">
-                <div class="col-lg-6 col-12">
+                <div class="col-lg-6 col-6">
                     <img :src="data1.topic2.image" alt="">
                 </div>
-                <div class="col-lg-6 col-12">
-                    <h3 class="t-center">{{ data1.topic2.title }}</h3>
-                    <p class="t-center">
-                        XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                        XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                        XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                        XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                        XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                        XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                        XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                        XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                    </p>
-                    <div class="explore">
-                        <h5 class="t-center"  v-on:click="explore">探索</h5>
+                 <div :class="data1.topic2.layout_type">
+                    <div v-html="data1.topic2.title"></div>
+                    <div v-if="data1.topic1.explore==true" class="explore">
+                        <h5 class="t-center"  v-on:click="explore('history')">探索</h5>
                     </div>
                 </div>
             </div>
@@ -124,23 +145,20 @@
     <div class="full-width clearfix temple_explore">
         <div class="fixed-width">
             <div class="col-xl-12 col-12 vam">
-                <div class="col-lg-6">
-                    <h3 class="t-center">{{ data1.topic3.title }}</h3>
-                    <p class="">
-                        {{ data1.topic3.text }}
-                    </p>
-                    <div class="explore">
-                        <h5 class="t-center"  v-on:click="explore">探索</h5>
+                <div :class="data1.topic3.layout_type">
+                    <div v-html="data1.topic3.title"></div>
+                    <div v-if="data1.topic1.explore==true" class="explore">
+                        <h5 class="t-center"  v-on:click="explore('temple_explore')">探索</h5>
                     </div>
                 </div>
-                <div class="col-lg-6 col-12">
+                <div class="col-lg-6 col-6">
                     <img :src="data1.topic3.image" alt="">
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="full-width clearfix god_introduction">
+    <!-- <div class="full-width clearfix god_introduction">
         <div class="fixed-width">
             <div class="col-xl-12 col-12 vam">
                 <div class="col-lg-6 col-12">
@@ -158,15 +176,16 @@
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </p>
-                    <div class="explore">
+                    <div v-if="data1.topic1.explore==true"class="explore">
                         <h5 class="t-center" v-on:click="explore"><span></span>探索<span></span></h5>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+     -->
     
-    <div class="full-width clearfix name">
+     <div v-if="data1.about_us.show==true" class="full-width clearfix name">
         <div class="fixed-width">
             <div class="col-xl-12 col-12 vam">
                 <div class="col-xl-3 col-6">
@@ -191,7 +210,8 @@
                     <h1>關於我們</h1>
                 <!-- </div> -->
                 <!-- <div class="col-lg-3 col-6"> -->
-                    <p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx</p>
+                    <p>我們是一群從外地到嘉義念書的大學生，</p>
+                    <p>希望藉由網頁帶領其他學生了解嘉義的歷史</p>
                 <!-- </div> -->
             </div>
         </div>
@@ -211,10 +231,37 @@
 </body>
 
 <script>
+    let url="index.json";
+    axios_get();
+    let loading = new Vue({
+        el:"#loading",
+        data:{
+
+        },
+        mounted() {
+            // var x = document.getElementById("divtest");
+            // x.addEventListener('animationend',() => {
+            //     $("#loading").fadeOut();
+            //     console.log("transition end");
+            // })
+            this.$refs.divtest.addEventListener('animationend', () => {
+                $("#loading").fadeOut();
+                console.log("transition end");
+            })
+            console.log("XXX");
+            // setTimeout(() => {
+            //     this.show = true
+            // }, 3000)
+        }
+    })
+
     let header_vue = new Vue({
         el : "#header",
         data:{
             data1:"",
+            bg:{
+                background:'#961D16'
+            },
         },
         methods:{
             explore:function(){
@@ -232,8 +279,17 @@
             
         },
         methods:{
-            explore:function(){
-                
+            explore:function(json){
+                if(json=='about_chiayi'){
+                    url = "about_chiayi.json";
+                }else if(json == 'history'){
+                    url = "history.json";
+                }else{
+                    url = "temple_explore.json";
+                }
+                axios_get();
+                console.log(url);
+
             }
         }
         
@@ -245,8 +301,17 @@
             
         },
         methods:{
-            explore:function(){
-                
+            explore:function(json){
+                if(json=='about_chiayi'){
+                    url = "about_chiayi.json";
+                }else if(json == 'history'){
+                    url = "history.json";
+                }else{
+                    url = "temple_explore.json";
+                }
+                axios_get();
+                console.log(url);
+
             }
         }
         
@@ -258,8 +323,16 @@
             
         },
         methods:{
-            explore:function(){
-                
+            explore:function(json){
+                if(json=='about_chiayi'){
+                    url = "about_chiayi.json";
+                }else if(json == 'history'){
+                    url = "history.json";
+                }else{
+                    url = "temple_explore.json";
+                }
+                axios_get();
+                console.log(url);
             }
         }
         
@@ -272,8 +345,16 @@
             
         },
         methods:{
-            explore:function(){
-                
+            explore:function(json){
+                if(json=='about_chiayi'){
+                    url = "about_chiayi.json";
+                }else if(json == 'history'){
+                    url = "history.json";
+                }else{
+                    url = "temple_explore.json";
+                }
+                axios_get();
+                console.log(url);
             }
         }
     });
@@ -286,23 +367,25 @@
         },
     });
 
-    axios.get("index.json")
-    .then(function(response){
-        console.log(response.data.data.header.title);
-        // console.log(JSON.stringify(response.data.index));
-        header_vue.data1 = response.data.data;
-        about_chiayi.data1 = response.data.data;
-        history.data1 = response.data.data;
-        temple_explore.data1 = response.data.data;
-        god_introduction.data1 = response.data.data;
-        name_vue.data1 = response.data.data;
-        console.log(main_vue.data1);
-        
-    })
-    .catch(function(error){
-        console.log(error);
-    });
-    
+
+    function axios_get(){
+        axios.get(url)
+        .then(function(response){
+            console.log(response.data.data.header.title);
+            // console.log(JSON.stringify(response.data.index));
+            header_vue.data1 = response.data.data;
+            about_chiayi.data1 = response.data.data;
+            history.data1 = response.data.data;
+            temple_explore.data1 = response.data.data;
+            god_introduction.data1 = response.data.data;
+            name_vue.data1 = response.data.data;
+            // console.log(main_vue.data1);
+            
+        })
+        .catch(function(error){
+            console.log(error);
+        });
+    }    
     
 </script>
 

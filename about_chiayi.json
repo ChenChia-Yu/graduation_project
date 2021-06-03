@@ -2,10 +2,60 @@
     "contentType":"application/json",
     "data":{
         "header":{
-            "title" : "城隍際遇",
+            "title" : "<h1 class='t-center'>嘉義</h1><p class='t-center'>諸羅縣的由來</p>",
             "image" : "https://i.ytimg.com/vi/KKITUudusC0/maxresdefault.jpg",
             "explore" : false
+        },
+        "topic1":{
+            "image":"https://i.ytimg.com/vi/KKITUudusC0/maxresdefault.jpg",
+            "layout_type":"col-lg-12 col-12",
+            "title":"<h3 class='t-left'>Q:為甚麼嘉義之前稱之為諸羅</h3>",
+            "explore":false
+        },
+        "topic2":{
+            "image":"https://i.ytimg.com/vi/KKITUudusC0/maxresdefault.jpg",
+            "layout_type":"col-lg-12 col-12",
+            "explore":false,
+            "title":"<p class='t-left'>在外來勢力入侵台灣,嘉義一帶是名為「諸羅山社」的平埔族活動範圍</p>"
+        },
+        "topic3":{
+            "image":"https://i.ytimg.com/vi/KKITUudusC0/maxresdefault.jpg",
+            "layout_type":"col-lg-12 col-12",
+            "explore":false,
+            "title":"<p class='t-left'>荷蘭人佔領時期，將此社「番語」音譯為「Tirosen」，已有了諸羅的稱呼出現</p>"
+        },
+        "topic4":{
+            "image":"https://i.ytimg.com/vi/KKITUudusC0/maxresdefault.jpg",
+            "layout_type":"col-lg-12 col-12",
+            "explore":false,
+            "title":"<p class='t-left'>到了鄭氏時期首次以閩南口語翻譯成漢字「諸羅山」。</p>"
+        },
+        "topic5":{
+            "image":"https://i.ytimg.com/vi/KKITUudusC0/maxresdefault.jpg",
+            "layout_type":"col-lg-12 col-12",
+            "explore":false,
+            "title":"<p class='t-left'>但諸羅的台語發音又近似豬勞，於是在清朝改用同音異字「諸羅山」</p><p class='t-left'>並以我們所熟知的諸羅兩字為縣名</p>"
+        },
+        "topic6":{
+            "image":"https://i.ytimg.com/vi/KKITUudusC0/maxresdefault.jpg",
+            "layout_type":"col-lg-12 col-12",
+            "title":"<h3 class='t-left'>Q:那諸羅山名稱又為何演變成嘉義呢?</h3>",
+            "explore":false
+        },
+        "topic7":{
+            "image":"https://i.ytimg.com/vi/KKITUudusC0/maxresdefault.jpg",
+            "layout_type":"col-lg-12 col-12",
+            "title":"<p class='t-left'>這得牽扯到清朝乾隆時期囉，當時台灣發生林爽文反清之役，諸羅遭到圍攻</p>",
+            "explore":false
+        },
+        "topic8":{
+            "image":"https://i.ytimg.com/vi/KKITUudusC0/maxresdefault.jpg",
+            "layout_type":"col-lg-12 col-12",
+            "title":"<p class='t-left'>城內人民協助清軍有功，清朝以「嘉其死守城池之忠義」之旨，</p><p class='t-right'>此句話翻譯為嘉勉誓死守城的忠誠，因此諸羅此後亦稱為嘉義</p>",
+            "explore":false
+        },
+        "about_us":{
+            "show":false
         }
-        
     }
 }
