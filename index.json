@@ -1,7 +1,7 @@
 {
     "contentType":"application/json",
     "header":{
-        "title" : "<h1 class='t-center'>城隍軼事</h1>",
+        "title" : "<h1 class='t-center'>城隍遺夢</h1>",
         "image" : "https://upload.wikimedia.org/wikipedia/commons/5/57/COVID-19%E6%9C%9F%E9%96%93%E7%9A%84%E6%96%B0%E7%AB%B9%E9%83%BD%E5%9F%8E%E9%9A%8D%E5%BB%9F.jpg",
         "explore" : true
     },

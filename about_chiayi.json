@@ -1,7 +1,7 @@
 {
     "contentType":"application/json",
     "header":{
-        "title" : "<h1 style='padding-top:224px;' class='t-center'>嘉義</h1><p style='padding-top:109px;padding-bottom:386px' class='t-center'>諸羅縣的由來</p>",
+        "title" : "<h1 style='padding-top:224px;color:#000;' class='t-center'>嘉義</h1><p style='padding-top:109px;padding-bottom:386px;color:#000;' class='t-center'>諸羅縣的由來</p>",
         "image" : "",
         "explore" : false
     },

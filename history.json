@@ -1,7 +1,7 @@
 {
     "contentType":"application/json",
     "header":{
-        "title" : "<h1 style='padding-top:224px;' class='t-center'>歷史軌跡</h1><p style='padding-top:109px;padding-bottom:386px' class='t-center'>前塵追憶</p>",
+        "title" : "<h1 style='padding-top:224px;color:#000;' class='t-center'>歷史軌跡</h1><p style='padding-top:109px;padding-bottom:386px;color:#000;' class='t-center'>前塵追憶</p>",
         "image" : "",
         "explore" : false
     },
@@ -51,10 +51,10 @@
                 "title_layout_type":"col-lg-12 col-12",
                 "content_layout_type":{
                     "type":"col-lg-12 col-12",
-                    "innerHTML":"<p class='t-center'>小河旁坐落著一個小村莊</p><p class='t-center'>而村子有一位自幼苦讀詩書的讀書人-劉公子，</p><p class='t-center'>畢生一心想考取功名、光宗耀祖，成為村莊的驕傲，<p class='t-center'>並藉由當官讓百姓安居樂業</p><p class='t-center'>可惜趙生參加過三次科舉制度考試，皆榜上無名。</p><p class='t-center'>在某次科舉考試因為身體患有疾病而無法前去考試，</p><p class='t-center'>於是就請了跟在自己身旁已久的書僮-趙生，</p><p class='t-center'>前去幫忙赴試；到了放榜當天，劉公子家外頭人聲鼎沸</p><p class='t-center'>鞭炮作響，高賀他考上官職，不過實際上理當是趙生考中，</p><p class='t-center'>但村子裡無人知曉，隔天，劉公子就這樣前去就任新官；</p><p class='t-center'>趙生也在昨夜突然銷聲匿跡，消失在這村子上……</p>"
+                    "innerHTML":"<div class='explanation_surprise'><div class='col-lg-12 col-12'><h3 class='border_line explanation_title'></h3></div><div class='explanation_content'></div></div><p class='t-center'>小河旁坐落著一個小村莊</p><p class='t-center'>而村子有一位自幼苦讀詩書的讀書人-劉公子，</p><p class='t-center'>畢生一心想考取功名、光宗耀祖，成為村莊的驕傲，<p class='t-center'>並藉由當官讓百姓安居樂業</p><p class='t-center'>可惜趙生參加過三次科舉制度考試，皆榜上無名。</p><p class='t-center'>在某次科舉考試因為身體患有疾病而無法前去考試，</p><p class='t-center'>於是就請了跟在自己身旁已久的書僮-趙生，</p><p class='t-center'>前去幫忙赴試；到了放榜當天，劉公子家外頭人聲鼎沸</p><p class='t-center'>鞭炮作響，高賀他考上官職，不過實際上理當是趙生考中，</p><p class='t-center'>但村子裡無人知曉，隔天，劉公子就這樣前去就任新官；</p><p class='t-center'>趙生也在昨夜突然銷聲匿跡，消失在這村子上……</p>"
                 },
                 "type":"left",
-                "title":"<h3 class='border_line'>傳說故事</h3><img style='width:5%;right:30px;' class='position-absolute turkey_image' src='turkey.png'>",
+                "title":"<h3 class='border_line'>傳說故事</h3><img style='width:5%;right:30px;' class='position-absolute turkey_image' id='surprise' onClick='show_surprise(this)' src='turkey2.png'>",
                 "image":"https://i.ytimg.com/vi/KKITUudusC0/maxresdefault.jpg",
                 "explore":false
             }
@@ -77,7 +77,7 @@
                 "class_name":"content",
                 "content_layout_type":{
                     "type":"col-lg-12 col-12",
-                    "innerHTML":"<p class='t-center'>小河旁坐落著一個小村莊</p><p class='t-center'>而村子有一位自幼苦讀詩書的讀書人-劉公子，</p><p class='t-center'>畢生一心想考取功名、光宗耀祖，成為村莊的驕傲，<p class='t-center'>並藉由當官讓百姓安居樂業</p><p class='t-center'>可惜趙生參加過三次科舉制度考試，皆榜上無名。</p><p class='t-center'>在某次科舉考試因為身體患有疾病而無法前去考試，</p><p class='t-center'>於是就請了跟在自己身旁已久的書僮-趙生，</p><p class='t-center'>前去幫忙赴試；到了放榜當天，劉公子家外頭人聲鼎沸</p><p class='t-center'>鞭炮作響，高賀他考上官職，不過實際上理當是趙生考中，</p><p class='t-center'>但村子裡無人知曉，隔天，劉公子就這樣前去就任新官；</p><p class='t-center'>趙生也在昨夜突然銷聲匿跡，消失在這村子上……</p>"
+                    "innerHTML":"<p class='t-center'>隔了幾天的某個傍晚</p><p class='t-center'>河邊哭哭啼啼跑來了一位媳婦，</p><p class='t-center'>伴隨著哭腔說著:「我們的財產全部都沒了，<p class='t-center'>該怎麼買藥過活?我乾脆直接自殺算了」，這位媳婦由於丈夫得了病</p><p class='t-center'>一直以來靠著養雞鴨換錢，買藥延續丈夫的命</p><p class='t-center'>如今牲畜卻被黃鼠狼給偷走，所以一時想不開，想跳河自盡</p><p class='t-center'>此時她身邊竟出現一隻水鬼，誘惑她趕快跳河做替身，</p><p class='t-center'>這小媳婦也就往河裡跳，在水中手腳不斷掙扎</p><p class='t-center'>水鬼便抓住他的腳奮力向下拉，但就在此時，向下拉的水鬼鬆了手</p><p class='t-center'>小媳婦又忽然隨手握住了一根木頭，讓她勉強浮在水面</p><p class='t-center'>村里人見狀，趕緊救他上岸</p>"
                 },
                 "type":"left",
                 "title":"<h3 class='border_line'>傳說故事</h3>",
@@ -101,7 +101,7 @@
                 "class_name":"content",
                 "content_layout_type":{
                     "type":"col-lg-12 col-12",
-                    "innerHTML":"<p class='t-center'>小河旁坐落著一個小村莊</p><p class='t-center'>而村子有一位自幼苦讀詩書的讀書人-劉公子，</p><p class='t-center'>畢生一心想考取功名、光宗耀祖，成為村莊的驕傲，<p class='t-center'>並藉由當官讓百姓安居樂業</p><p class='t-center'>可惜趙生參加過三次科舉制度考試，皆榜上無名。</p><p class='t-center'>在某次科舉考試因為身體患有疾病而無法前去考試，</p><p class='t-center'>於是就請了跟在自己身旁已久的書僮-趙生，</p><p class='t-center'>前去幫忙赴試；到了放榜當天，劉公子家外頭人聲鼎沸</p><p class='t-center'>鞭炮作響，高賀他考上官職，不過實際上理當是趙生考中，</p><p class='t-center'>但村子裡無人知曉，隔天，劉公子就這樣前去就任新官；</p><p class='t-center'>趙生也在昨夜突然銷聲匿跡，消失在這村子上……</p>"
+                    "innerHTML":"<p class='t-center'>河邊旁半生半死的媳婦</p><p class='t-center'>聽到了水鬼與趙生的對話，震驚了她</p><p class='t-center'>原來趙生在那晚被有心人士陷害不慎掉入河邊致死，成了水鬼<p class='t-center'>趙生由其他水鬼得知若是想投胎就必須找個替死鬼方能離開</p><p class='t-center'>但趙生不忍村里的人死去，非但自己不找替死鬼，</p><p class='t-center'>還不斷阻擋、不斷的勸說其他水鬼取村里人性命</p><p class='t-center'>他說既然已經身死為鬼，此為命也，怎可為了一己之私再去害人，惡報循環?</p><p class='t-center'>這爭論的過程全被那媳婦給聽到，此事便傳遍整個村子</p>"
                 },
                 "type":"left",
                 "title":"<h3 class='border_line'>傳說故事</h3>",
@@ -125,7 +125,7 @@
                 "class_name":"content",
                 "content_layout_type":{
                     "type":"col-lg-12 col-12",
-                    "innerHTML":"<p class='t-center'>小河旁坐落著一個小村莊</p><p class='t-center'>而村子有一位自幼苦讀詩書的讀書人-劉公子，</p><p class='t-center'>畢生一心想考取功名、光宗耀祖，成為村莊的驕傲，<p class='t-center'>並藉由當官讓百姓安居樂業</p><p class='t-center'>可惜趙生參加過三次科舉制度考試，皆榜上無名。</p><p class='t-center'>在某次科舉考試因為身體患有疾病而無法前去考試，</p><p class='t-center'>於是就請了跟在自己身旁已久的書僮-趙生，</p><p class='t-center'>前去幫忙赴試；到了放榜當天，劉公子家外頭人聲鼎沸</p><p class='t-center'>鞭炮作響，高賀他考上官職，不過實際上理當是趙生考中，</p><p class='t-center'>但村子裡無人知曉，隔天，劉公子就這樣前去就任新官；</p><p class='t-center'>趙生也在昨夜突然銷聲匿跡，消失在這村子上……</p>"
+                    "innerHTML":"<h4 class='t-center'>過了許多年的某日，忽然聽見河面上傳來聲音：</h4><h2 class='t-center'>趙生聽召！</h2>"
                 },
                 "type":"left",
                 "title":"<h3 class='border_line'>傳說故事</h3>",
@@ -137,19 +137,44 @@
                 "class_name":"content",
                 "content_layout_type":{
                     "type":"col-lg-12 col-12",
-                    "innerHTML":"<p class='t-center'>小河旁坐落著一個小村莊</p><p class='t-center'>而村子有一位自幼苦讀詩書的讀書人-劉公子，</p><p class='t-center'>畢生一心想考取功名、光宗耀祖，成為村莊的驕傲，<p class='t-center'>並藉由當官讓百姓安居樂業</p><p class='t-center'>可惜趙生參加過三次科舉制度考試，皆榜上無名。</p><p class='t-center'>在某次科舉考試因為身體患有疾病而無法前去考試，</p><p class='t-center'>於是就請了跟在自己身旁已久的書僮-趙生，</p><p class='t-center'>前去幫忙赴試；到了放榜當天，劉公子家外頭人聲鼎沸</p><p class='t-center'>鞭炮作響，高賀他考上官職，不過實際上理當是趙生考中，</p><p class='t-center'>但村子裡無人知曉，隔天，劉公子就這樣前去就任新官；</p><p class='t-center'>趙生也在昨夜突然銷聲匿跡，消失在這村子上……</p>"
+                    "innerHTML":"<p class='t-center'>趙生與同一河裡的水鬼們浮上水面</p><p class='t-center'>只見水上站著兩個黃衣差人，捧著一紙公文。</p><p class='t-center'>差人道：趙生陰德厚重，得百姓愛戴。<p class='t-center'>特封為此府城隍，一群水鬼可隨之上岸，作為鬼差侍候。</p><p class='t-center'>此後，趙生尊為城隍趙公，監督管理著陰陽 </p>"
                 },
                 "type":"left",
-                "title":"<h3 class='border_line'>歷史演進</h3>",
+                "title":"<h3 class='border_line'>傳說故事</h3>",
                 "explore":false
             }
-        ],   
+        ],
         [
             {
                 "class_name":"content",
                 "content_layout_type":{
                     "type":"col-lg-12 col-12",
-                    "innerHTML":"<p class='t-center'>小河旁坐落著一個小村莊</p><p class='t-center'>而村子有一位自幼苦讀詩書的讀書人-劉公子，</p><p class='t-center'>畢生一心想考取功名、光宗耀祖，成為村莊的驕傲，<p class='t-center'>並藉由當官讓百姓安居樂業</p><p class='t-center'>可惜趙生參加過三次科舉制度考試，皆榜上無名。</p><p class='t-center'>在某次科舉考試因為身體患有疾病而無法前去考試，</p><p class='t-center'>於是就請了跟在自己身旁已久的書僮-趙生，</p><p class='t-center'>前去幫忙赴試；到了放榜當天，劉公子家外頭人聲鼎沸</p><p class='t-center'>鞭炮作響，高賀他考上官職，不過實際上理當是趙生考中，</p><p class='t-center'>但村子裡無人知曉，隔天，劉公子就這樣前去就任新官；</p><p class='t-center'>趙生也在昨夜突然銷聲匿跡，消失在這村子上……</p>"
+                    "innerHTML":"<p class='t-center'>在那晚村裡的人都做了一個夢，</p><p class='t-center'>夢中趙生披紅戴綠，新官上任，送到了一座堂皇府衙當中</p><p class='t-center'>水鬼晉升城隍，這都是趙生行善有德，<p class='t-center'>生前本來就受百姓愛戴</p><p class='t-center'>後來當地的城隍廟香火極旺，村民們都敬城隍趙公</p><p class='t-center'>稱為城隍爺呢!</p>"
+                },
+                "type":"left",
+                "title":"<h3 class='border_line'>傳說故事</h3>",
+                "explore":false
+            }
+        ],
+        [
+            {
+                "class_name":"content",
+                "content_layout_type":{
+                    "type":"col-lg-12 col-12",
+                    "innerHTML":"<div class='explanation_temple_history'><div class='explanation_content'></div></div><p class='t-center'></p><p class='t-center'>「城隍」一詞原本的意思，</p><p class='t-center'>指的即是保護人民身家安全的城牆和護城河。<p class='t-center'>而城隍的宗教觀念源自道教，其後與儒教結合相互影響。</p><p class='t-center'>城隍爺經歷多朝改革演變至今成為民眾信仰的眾多神明之一</p>"
+                },
+                "type":"left",
+                "title":"<h3 class='border_line'>歷史演進</h3><img style='width:5%;right:30px;' class='position-absolute turkey_image' id='temple_history' onclick='show_temple_history(this)' src='turkey2.png'>",
+                "explore":false
+            }
+        ],
+        
+        [
+            {
+                "class_name":"content",
+                "content_layout_type":{
+                    "type":"col-lg-12 col-12",
+                    "innerHTML":"<div style='width:50%;color:white;height:200px;'></div>"
                 },
                 "type":"left",
                 "title":"<h3 class='border_line'>歷史演進</h3>",

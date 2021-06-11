@@ -1,7 +1,7 @@
 {
     "contentType":"application/json",
     "header":{
-        "title" : "<h1 style='padding-top:224px;' class='t-center'>城隍廟探奇</h1><p style='padding-top:109px;padding-bottom:386px' class='t-center'>前塵追憶</p>",
+        "title" : "<h1 style='padding-top:224px;color:#000;' class='t-center'>城隍廟探奇</h1><p style='padding-top:109px;padding-bottom:386px;color:#000;' class='t-center'>前塵追憶</p>",
         "image" : "",
         "explore" : false
     },
@@ -38,7 +38,7 @@
                 "title_layout_type":"col-lg-12 col-12",
                 "content_layout_type":{
                     "type":"col-lg-12 col-12 vam",
-                    "innerHTML":"<div class='col-lg-6 col-6'><img style='width:20%;display:block;margin:auto;' class='turkey_image' src='turkey.png'></div><div class='col-lg-6 col-6'><div id='front' onClick='temple(this)' class='triangle_on_img'></div><div id='front' onClick='temple(this)' class='triangle_on_img'></div><div id='front' onClick='temple(this)' class='triangle_on_img'></div><div id='front' onClick='temple(this)' class='triangle_on_img'></div><div id='front' onClick='temple(this)' class='triangle_on_img'></div><div id='front' onClick='temple(this)' class='triangle_on_img'></div><div id='front' onClick='temple(this)' class='triangle_on_img'></div><div id='front' onClick='temple(this)' class='triangle_on_img'></div><div id='front' onClick='temple(this)' class='triangle_on_img'></div><img src='temple_picture1.png'></div>"
+                    "innerHTML":"<div class='explanation_temple_plaque'><div class='col-lg-12 col-12'><h3 class='border_line explanation_title'></h3></div><div class='explanation_content'></div></div><div class='col-lg-6 col-6'><img style='width:20%;display:block;margin:auto;' onClick='open_app_exhibition()' class='turkey_image' src='turkey.png'><div class='col-lg-12 col-12'><div class='app_exhibition'><p class='t-center'>快來看看文物介紹與發覺未知的文物吧!</p><p class='t-center'>AR導覽時還能看到文物的不同介紹喔!</p></div></div></div><div class='col-lg-6 col-6'><div id='plaque1' onClick='plaque(this)' class='triangle_on_img'></div><div id='plaque2' onClick='plaque(this)' class='triangle_on_img'></div><div id='plaque3' onClick='plaque(this)' class='triangle_on_img'></div><div id='plaque4' onClick='plaque(this)' class='triangle_on_img'></div><div id='plaque5' onClick='plaque(this)' class='triangle_on_img'></div><div id='plaque6' onClick='plaque(this)' class='triangle_on_img'></div><div  id='plaque7'onClick='plaque(this)' class='triangle_on_img'></div><div id='plaque8' onClick='plaque(this)' class='triangle_on_img'></div><div id='plaque9' onClick='plaque(this)' class='triangle_on_img'></div><img src='temple_picture1.png'></div>"
                 },
                 "type":"left",
                 "title":"<h3 class='border_line'>下載</h3>",
@@ -50,8 +50,8 @@
                 "class_name":"content",
                 "title_layout_type":"col-lg-12 col-12",
                 "content_layout_type":{
-                    "type":"col-lg-12 col-12",
-                    "innerHTML":"<div class='col-lg-6 col-6'><iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3659.5027386112697!2d120.45183831401691!3d23.478394805031666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x446b2c83abaceae4!2z5ZiJ576p5Z-O6ZqN5bufLee2j-mdluS-rw!5e0!3m2!1szh-TW!2stw!4v1623352289581!5m2!1szh-TW!2stw' width='600' height='450' style='border:0;' loading='lazy'></iframe></div><div class='col-lg-6 col-6'><div class='temple_info'><h4>聯絡地址:嘉義市東區吳鳳北路168號</h4><h4>連絡電話:(05)222-4116</h4><h4>營業時間:6:00-22:00</h4></div></div>"
+                    "type":"col-lg-12 col-12 vam",
+                    "innerHTML":"<div class='col-lg-6 col-6'><iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3659.5027386112697!2d120.45183831401691!3d23.478394805031666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x446b2c83abaceae4!2z5ZiJ576p5Z-O6ZqN5bufLee2j-mdluS-rw!5e0!3m2!1szh-TW!2stw!4v1623352289581!5m2!1szh-TW!2stw' width='600' height='450' style='border:0;' loading='lazy'></iframe></div><div class='col-lg-6 col-6 temple_info'><div><h4>聯絡地址:嘉義市東區吳鳳北路168號</h4><h4>連絡電話:(05)222-4116</h4><h4>營業時間:6:00-22:00</h4></div></div>"
                 },
                 "type":"left",
                 "title":"<h3 class='border_line'>交通資訊</h3>",

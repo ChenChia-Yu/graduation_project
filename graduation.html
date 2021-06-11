@@ -37,7 +37,7 @@
                         </div>
                     </div>    
                     <div class="col-lg-2 col-2">
-                        <p class="t-right percentage">0%</p>
+                        <p class="t-right percentage" ref="cnt">100</p>
                     </div>
                 </div>
             </div>
@@ -186,14 +186,26 @@
     let loading = new Vue({
         el:"#loading",
         data:{
-
+            // couunt:0
         },
         mounted() {
             this.$refs.divtest.addEventListener('animationend', () => {
                 $("#loading").fadeOut();
                 console.log("transition end");
             })
+            $('.percentage').each(function () {
+                $(this).prop('Counter',0).animate({
+                    Counter: $(this).text()
+                }, {
+                    duration: 4000,
+                    easing: 'swing',
+                    step: function (now) {
+                        $(this).text(Math.ceil(now));
+                    }
+                });
+            });
             console.log("XXX");
+
         },
         method: {
             explore:function(e){
@@ -282,19 +294,36 @@
         },
     });
 
-    //other function
+//other function
     
     //clear explanation_panel
     document.onclick = function(data){
         console.log(data.target.getAttribute('class'));
-        if(data.target.getAttribute('id') != "tai_tsung_duan" && data.target.getAttribute('id') != "honorific_title"){
+        if(data.target.getAttribute('id') != "tai_tsung_duan" && data.target.getAttribute('id') != "honorific_title" && url == "history.json"){
             document.querySelector(".explanation").style.display = "none";
         }
+
+        if(data.target.getAttribute('id') != "surprise" && url == "history.json"){
+            document.querySelector(".explanation_surprise").style.display = "none";
+        }
+
+        if(data.target.getAttribute('id') != "temple_history" && url == "history.json"){
+            document.querySelector(".explanation_temple_history").style.display = "none";
+        }
         
-        if(data.target.getAttribute('class') != "triangle" && data.target.getAttribute('class') != "triangle_in_img"){
+        if(data.target.getAttribute('class') != "triangle" && data.target.getAttribute('class') != "triangle_in_img" && url == "temple_explore.json"){
             console.log("XXXX");
             document.querySelector(".explanation_temple").style.display = "none";
         }
+
+        if(data.target.getAttribute('class') != "triangle_on_img" && url == "temple_explore.json"){
+            document.querySelector(".explanation_temple_plaque").style.display = "none";
+        }
+    }
+
+    //show app_exhibition
+    function open_app_exhibition(){
+        document.querySelector(".app_exhibition").style.display = "block";
     }
 
     //show explanation panel
@@ -312,9 +341,21 @@
             document.querySelector(".explanation_title").innerHTML = "敕封尊號";
             document.querySelector(".explanation_content").innerHTML = 
             "<p>清朝同治元年（1862年）間發生戴潮春之役，</p><p>戴軍舉眾圍攻諸羅城三次，眼看諸羅城就要攻破了</p><p>整個諸羅城人心惶惶</p><p>知縣白鸞卿到城隍廟請示城隍爺由知縣抽籤詩</p><p>城隍爺蒙示全句籤詩：「閤家人安泰，名利兩興昌，出外皆大吉，有禍不成殃」</p><p>由知縣解讀籤詩，告訴全城人民「有禍不城殃」</p><p>使得人心遂定保住全城</p><p>此事於同治十三年由欽差沈葆楨奏請朝廷加封城隍爺</p><p>因此在光緒元年（1875年），光緒皇帝敕封嘉義城隍「綏靖」</p><p>而有綏靖侯之稱，是臺灣唯一加封尊號的縣級城隍爺。</p>";
-        }
+        }   
     }
 
+    function show_surprise(e){
+        document.querySelector(".explanation_surprise").style.display="block";
+        document.querySelector(".explanation_surprise .explanation_title").innerHTML = "彩蛋";
+        document.querySelector(".explanation_surprise .explanation_content").innerHTML = "<p class='t-center'>在放榜當天夜晚，</p><p class='t-center'>劉公子的手下因為擔心趙生會搶了劉公子的官職，</p><p class='t-center'>趁著趙生去幫劉公子跑腿時，在村莊河邊橋上埋伏他</p><p class='t-center'>並趁著他不注意將他推下河裡，趙生不斷掙扎後，慢慢的沉入河中</p><p class='t-center'>劉公子得知後震怒，並下令立刻開除他</p><p class='t-center'>並不允許任何有關消息透露出去。</p>"
+        
+    }
+
+    function show_temple_history(e){
+        document.querySelector(".explanation_temple_history").style.display="block";
+        document.querySelector(".explanation_temple_history .explanation_content").innerHTML = "<p>城隍信仰是從最早自然神護城牆河的崇敬，變成人格神為護國安民消災降福之崇敬，到了明朝朱元璋的理念，城隍亦轉陰間司法神為評斷善惡與仲裁的崇敬</p>";
+
+    }
     function temple(e){
         document.querySelector(".explanation_temple").style.display = "block";
         var id = e.getAttribute("id");
@@ -358,10 +399,42 @@
         }else if(id=="pray"){
             document.querySelector(".explanation_temple .explanation_title").innerHTML = "前殿";
             document.querySelector(".explanation_temple .explanation_content").innerHTML = "<h3 class='floor_title'><span></span>拜殿</h3><h4 class='floor_content'>主祀: 城隍尊神</h4><h4 class='floor_content'>陪祀: 范謝將軍</h4>";
-            
         }
     }
 
+    function plaque(e){
+        document.querySelector(".explanation_temple_plaque").style.display = "block";
+        var id = e.getAttribute("id");
+        if(id=="plaque1"){
+            document.querySelector(".explanation_temple_plaque .explanation_title").innerHTML = "城隍神轎";
+            document.querySelector(".explanation_temple_plaque .explanation_content").innerHTML = "<h4>放置於二樓展示的「八獅座」武轎，</h4><h4>早期為城隍爺出巡座轎，</h4><h4>是城隍廟鎮廟之寶</h4>";
+        }else if(id == "plaque2"){
+            document.querySelector(".explanation_temple_plaque .explanation_title").innerHTML = "日本和歌對聯";
+            document.querySelector(".explanation_temple_plaque .explanation_content").innerHTML = "<h4>全台灣寺廟建築保留唯一有日本和歌對聯交趾陶，</h4><h4>由當時「嘉義美記商店 蘇育奇」所捐獻。</h4>";
+        }else if(id == "plaque3"){
+            document.querySelector(".explanation_temple_plaque .explanation_title").innerHTML = "虎門左側交趾陶";
+            document.querySelector(".explanation_temple_plaque .explanation_content").innerHTML = "<h4>由林添木大師團隊，</h4><h4>採用後漢高祖民間傳說的故事「白兔記」、</h4><h4>三國演義裡的故事「關羽保二嫂」、包公民間傳說裡的故事「貍貓換太子」為題材所做。</h4>";
+        }else if(id == "plaque4"){
+            document.querySelector(".explanation_temple_plaque .explanation_title").innerHTML = "「至誠前知」匾";
+            document.querySelector(".explanation_temple_plaque .explanation_content").innerHTML = "<h4>同治三年(1864年)嘉義知縣白鸞卿獻立</h4><h4>原文四書&lt中庸&lt:「至誠之道，可以前知」，</h4><h4>取「至誠前知」這四字。</h4>";
+       
+        }else if(id =="plaque5"){
+            document.querySelector(".explanation_temple_plaque .explanation_title").innerHTML = "「拚場」交趾陶";
+            document.querySelector(".explanation_temple_plaque .explanation_content").innerHTML = "<h4>位於「至誠前知」匾額下方</h4><h4>，由林木、陳專友技藝各完成一半，</h4><h4>視為比拚的作品，是絕無僅有的珍寶之一</h4>";
+        }else if(id=="plaque6"){
+            document.querySelector(".explanation_temple_plaque .explanation_title").innerHTML = "大算盤";
+            document.querySelector(".explanation_temple_plaque .explanation_content").innerHTML = "<h4>高掛於正殿天井下方橫樑上的大算盤，</h4><h4>是清道光21年(公元1841年)信徒叩謝神恩所捐贈</h4>";
+        }else if(id == "plaque7"){
+            document.querySelector(".explanation_temple_plaque .explanation_title").innerHTML = "「台揚顯佑」匾";
+            document.querySelector(".explanation_temple_plaque .explanation_content").innerHTML = "<h4>源自清光緒12年(西元1886年)</h4><h4>巡撫劉銘傳奏請光緒皇帝頒賜</h4><h4>在民國107年公告為古物</h4>";
+        }else if(id == "plaque8"){
+            document.querySelector(".explanation_temple_plaque .explanation_title").innerHTML = "日本和歌對聯";
+            document.querySelector(".explanation_temple_plaque .explanation_content").innerHTML = "<h4>全台灣寺廟建築保留唯一有日本和歌對聯交趾陶，</h4><h4>由當時「嘉義美記商店 蘇育奇」所捐獻。</h4>";
+        }else if(id=="plaque9"){
+            document.querySelector(".explanation_temple_plaque .explanation_title").innerHTML = "龍門有側交趾陶";
+            document.querySelector(".explanation_temple_plaque .explanation_content").innerHTML = "<h4>為陳專友團隊的交趾陶採用民間道教故事所創作。</h4>";
+        }
+    }
     function axios_get(){
         axios.get(url)
         .then(function(response){

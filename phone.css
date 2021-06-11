@@ -176,6 +176,7 @@ header .show ul a{
 /* global ----- set background color */
 .about_chiayi,.history,.temple_explore,.god_introduction,.name,.content{
     background: #55707D;
+    color:#EEEEEE;
 }
 
 .content{
@@ -401,7 +402,7 @@ img.turkey_image{
     cursor:pointer;
 }
 
-.explanation,.explanation_temple{
+.explanation,.explanation_surprise,.explanation_temple_history,.explanation_temple,.explanation_temple_plaque{
     top: 10px;
     width:70%;
     /* right: 30px; */
@@ -419,11 +420,19 @@ img.turkey_image{
     display: none;
 }
 
-.explanation h3.border_line,.explanation_temple h3.border_line{
+.explanation_temple_history{
+    top: -50px;
+    left: 30%;
+    /* margin: auto; */
+    width: 30%;
+    padding: 20px;
+}
+
+.explanation h3.border_line,.explanation_surprise h3.border_line,.explanation_temple h3.border_line,.explanation_temple_plaque h3.border_line{
     margin-left: 0;
 }
 
-.explanation p,.explanation_temple p{
+.explanation p,.explanation_surprise p,.explanation_temple p,.explanation_temple_plaque p{
     word-break: break-all;
 }
 
@@ -436,11 +445,6 @@ img.turkey_image{
 }
 
 .triangle,.triangle_in_img,.triangle_on_img{
-    width: 0;
-    height: 0;
-    border-left: 25px solid transparent;
-    border-right: 25px solid transparent;
-    border-bottom: 50px solid #000;
     float: left;
     width: 0;
     height: 0;
@@ -517,15 +521,15 @@ img.turkey_image{
     right:10%;
 }
 
-.explanation_temple .explanation_content{
+.explanation_temple .explanation_content,.explanation_surprise .explanation_content,.explanation_temple_plaque .explanation_content{
     margin-left: 15px;
 }
 
-.explanation_temple h5,.explanation_temple h3,.explanation_temple h4{
+.explanation_temple h5,.explanation_surprise h3,.explanation_temple h3,.explanation_temple h4,.explanation_temple_plaque h4{
     color: #EEEEEE;
 }
 
-.explanation_temple h5::before{
+.explanation_temple h5::before,.explanation_temple_plaque h5::before{
     content: "";
     display: inline-block;
     background: #334137;
@@ -534,7 +538,7 @@ img.turkey_image{
     transform: rotate(45deg);
 }
 
-.explanation_temple h5::after{
+.explanation_temple h5::after,.explanation_temple_plaque h5::after{
     content: "";
     display: inline-block;
     height: 20px;
@@ -544,7 +548,7 @@ img.turkey_image{
     transform: rotate(45deg);
 }
 
-.explanation_temple h3.floor_title::before{
+.explanation_temple h3.floor_title::before,.explanation_temple_plaque h3.floor_title{
     content: "";
     display: inline-block;
     height: 20px;
@@ -553,7 +557,7 @@ img.turkey_image{
     transform: rotate(45deg);
 }
 
-.explanation_temple h4.floor_content::before{
+.explanation_temple h4.floor_content::before,.explanation_temple_plaque h4.floor_content::before{
     content: "";
     display: inline-block;
     height: 20px;
@@ -562,24 +566,39 @@ img.turkey_image{
     transform: rotate(45deg);
 }
 
-.explanation_temple h4{
+.explanation_surprise h4,.explanation_temple h4,.explanation_temple_plaque h4{
     margin-top: 30px;
     margin-left: 20px;
 }
 
-.explanation_temple h4.floor_content{
+.explanation_temple h4.floor_content,.explanation_temple_plaque h4.floor_content{
     margin-top: 15px;
 }
 
+.app_exhibition{
+    background: #961D16;
+    border-radius: 10px;
+    padding: 15px;
+    display:none;
+}
 
-.temple_info{
+iframe{
+    width: 100% !important;
+}
+
+div.temple_info{
+    bottom:0;
+    position: absolute;
+}
+
+.temple_info>div{
     float: left;
     padding: 12px 31px 11px 32px;
     position: relative;
     border:2px #EEEEEE solid;
 }
 
-.temple_info::before{
+.temple_info>div::before{
     content:'';
     top: 5px;
     left: 5px;
@@ -588,6 +607,7 @@ img.turkey_image{
     position: absolute;
     border:2px #EEEEEE solid;
 }
+
 
 .temple_info h4{
     color:#EEEEEE;
@@ -603,6 +623,7 @@ img.turkey_image{
     padding-left: 100px;
     word-break: break-all;
 }
+
 
 
 /* name */
