@@ -1,0 +1,165 @@
+{
+    "contentType":"application/json",
+    "header":{
+        "title" : "<h1 style='padding-top:224px;' class='t-center'>歷史軌跡</h1><p style='padding-top:109px;padding-bottom:386px' class='t-center'>前塵追憶</p>",
+        "image" : "",
+        "explore" : false
+    },
+    "topic":[
+        [
+            {
+                "class_name":"content",
+                "title_layout_type":"col-lg-12 col-12",
+                "content_layout_type":{
+                    "type":"col-lg-12 col-12",
+                    "innerHTML":"<img src='https://i.ytimg.com/vi/KKITUudusC0/maxresdefault.jpg' alt=''>"
+                },
+                "type":"left",
+                "title":"<h3 class='border_line'>軌跡圖</h3>",
+                "explore":false
+            }
+        ],
+        [
+            {
+                "class_name":"content",
+                "title_layout_type":"col-lg-12 col-12",
+                "content_layout_type":{
+                    "type":"col-lg-12 col-12 vam",
+                    "innerHTML":"<div class='explanation'><div class='col-lg-12 col-12'><h3 class='border_line explanation_title'></h3></div><div class='explanation_content'></div></div><div class='col-lg-3 col-3'><img class='w-50 right:0 turkey_image' onClick='show_explanation(this)' id='tai_tsung_duan' src='turkey.png'></div><div class='col-lg-9 col-9'><div class='div_color w-100 bg-white' onClick='show_explanation(this)' id='honorific_title' style='height:300px;'></div></div>"
+                },
+                "type":"left",
+                "title":"<h3 class='border_line'>軌跡圖</h3>",
+                "explore":false
+            }
+        ],
+        [
+            {
+                "class_name":"content",
+                "title_layout_type":"col-lg-12 col-12",
+                "content_layout_type":{
+                    "type":"col-lg-12 col-12",
+                    "innerHTML":"<img src='https://i.ytimg.com/vi/KKITUudusC0/maxresdefault.jpg' alt=''>"
+                },
+                "type":"left",
+                "title":"<div class='m-auto' style='width:45%'><h3 class='border_line t-center float-none m-0'>傳說故事-守護、司法之神-城隍爺</h3></div>",
+                "explore":false
+            }
+        ],
+        [
+            {
+                "class_name":"content",
+                "title_layout_type":"col-lg-12 col-12",
+                "content_layout_type":{
+                    "type":"col-lg-12 col-12",
+                    "innerHTML":"<p class='t-center'>小河旁坐落著一個小村莊</p><p class='t-center'>而村子有一位自幼苦讀詩書的讀書人-劉公子，</p><p class='t-center'>畢生一心想考取功名、光宗耀祖，成為村莊的驕傲，<p class='t-center'>並藉由當官讓百姓安居樂業</p><p class='t-center'>可惜趙生參加過三次科舉制度考試，皆榜上無名。</p><p class='t-center'>在某次科舉考試因為身體患有疾病而無法前去考試，</p><p class='t-center'>於是就請了跟在自己身旁已久的書僮-趙生，</p><p class='t-center'>前去幫忙赴試；到了放榜當天，劉公子家外頭人聲鼎沸</p><p class='t-center'>鞭炮作響，高賀他考上官職，不過實際上理當是趙生考中，</p><p class='t-center'>但村子裡無人知曉，隔天，劉公子就這樣前去就任新官；</p><p class='t-center'>趙生也在昨夜突然銷聲匿跡，消失在這村子上……</p>"
+                },
+                "type":"left",
+                "title":"<h3 class='border_line'>傳說故事</h3><img style='width:5%;right:30px;' class='position-absolute turkey_image' src='turkey.png'>",
+                "image":"https://i.ytimg.com/vi/KKITUudusC0/maxresdefault.jpg",
+                "explore":false
+            }
+        ],
+        [
+            {
+                "class_name":"content",
+                "title_layout_type":"col-lg-12 col-12",
+                "content_layout_type":{
+                    "type":"col-lg-12 col-12",
+                    "innerHTML":"<p class='t-center'>小河旁坐落著一個小村莊</p><p class='t-center'>而村子有一位自幼苦讀詩書的讀書人-劉公子，</p><p class='t-center'>畢生一心想考取功名、光宗耀祖，成為村莊的驕傲，<p class='t-center'>並藉由當官讓百姓安居樂業</p><p class='t-center'>可惜趙生參加過三次科舉制度考試，皆榜上無名。</p><p class='t-center'>在某次科舉考試因為身體患有疾病而無法前去考試，</p><p class='t-center'>於是就請了跟在自己身旁已久的書僮-趙生，</p><p class='t-center'>前去幫忙赴試；到了放榜當天，劉公子家外頭人聲鼎沸</p><p class='t-center'>鞭炮作響，高賀他考上官職，不過實際上理當是趙生考中，</p><p class='t-center'>但村子裡無人知曉，隔天，劉公子就這樣前去就任新官；</p><p class='t-center'>趙生也在昨夜突然銷聲匿跡，消失在這村子上……</p>"
+                },
+                "type":"left",
+                "title":"<h3 class='border_line'>傳說故事</h3>",
+                "explore":false
+            }
+        ],
+        [
+            {
+                "class_name":"content",
+                "content_layout_type":{
+                    "type":"col-lg-12 col-12",
+                    "innerHTML":"<p class='t-center'>小河旁坐落著一個小村莊</p><p class='t-center'>而村子有一位自幼苦讀詩書的讀書人-劉公子，</p><p class='t-center'>畢生一心想考取功名、光宗耀祖，成為村莊的驕傲，<p class='t-center'>並藉由當官讓百姓安居樂業</p><p class='t-center'>可惜趙生參加過三次科舉制度考試，皆榜上無名。</p><p class='t-center'>在某次科舉考試因為身體患有疾病而無法前去考試，</p><p class='t-center'>於是就請了跟在自己身旁已久的書僮-趙生，</p><p class='t-center'>前去幫忙赴試；到了放榜當天，劉公子家外頭人聲鼎沸</p><p class='t-center'>鞭炮作響，高賀他考上官職，不過實際上理當是趙生考中，</p><p class='t-center'>但村子裡無人知曉，隔天，劉公子就這樣前去就任新官；</p><p class='t-center'>趙生也在昨夜突然銷聲匿跡，消失在這村子上……</p>"
+                },
+                "type":"left",
+                "title":"<h3 class='border_line'>傳說故事</h3>",
+                "explore":false
+            }
+        ],   
+        [
+            {
+                "class_name":"content",
+                "content_layout_type":{
+                    "type":"col-lg-12 col-12",
+                    "innerHTML":"<p class='t-center'>小河旁坐落著一個小村莊</p><p class='t-center'>而村子有一位自幼苦讀詩書的讀書人-劉公子，</p><p class='t-center'>畢生一心想考取功名、光宗耀祖，成為村莊的驕傲，<p class='t-center'>並藉由當官讓百姓安居樂業</p><p class='t-center'>可惜趙生參加過三次科舉制度考試，皆榜上無名。</p><p class='t-center'>在某次科舉考試因為身體患有疾病而無法前去考試，</p><p class='t-center'>於是就請了跟在自己身旁已久的書僮-趙生，</p><p class='t-center'>前去幫忙赴試；到了放榜當天，劉公子家外頭人聲鼎沸</p><p class='t-center'>鞭炮作響，高賀他考上官職，不過實際上理當是趙生考中，</p><p class='t-center'>但村子裡無人知曉，隔天，劉公子就這樣前去就任新官；</p><p class='t-center'>趙生也在昨夜突然銷聲匿跡，消失在這村子上……</p>"
+                },
+                "type":"left",
+                "title":"<h3 class='border_line'>傳說故事</h3>",
+                "explore":false
+            }
+        ],   
+        [
+            {
+                "class_name":"content",
+                "content_layout_type":{
+                    "type":"col-lg-12 col-12",
+                    "innerHTML":"<p class='t-center'>小河旁坐落著一個小村莊</p><p class='t-center'>而村子有一位自幼苦讀詩書的讀書人-劉公子，</p><p class='t-center'>畢生一心想考取功名、光宗耀祖，成為村莊的驕傲，<p class='t-center'>並藉由當官讓百姓安居樂業</p><p class='t-center'>可惜趙生參加過三次科舉制度考試，皆榜上無名。</p><p class='t-center'>在某次科舉考試因為身體患有疾病而無法前去考試，</p><p class='t-center'>於是就請了跟在自己身旁已久的書僮-趙生，</p><p class='t-center'>前去幫忙赴試；到了放榜當天，劉公子家外頭人聲鼎沸</p><p class='t-center'>鞭炮作響，高賀他考上官職，不過實際上理當是趙生考中，</p><p class='t-center'>但村子裡無人知曉，隔天，劉公子就這樣前去就任新官；</p><p class='t-center'>趙生也在昨夜突然銷聲匿跡，消失在這村子上……</p>"
+                },
+                "type":"left",
+                "title":"<h3 class='border_line'>傳說故事</h3>",
+                "explore":false
+            }
+        ],   
+        [
+            {
+                "class_name":"content",
+                "content_layout_type":{
+                    "type":"col-lg-12 col-12",
+                    "innerHTML":"<p class='t-center'>小河旁坐落著一個小村莊</p><p class='t-center'>而村子有一位自幼苦讀詩書的讀書人-劉公子，</p><p class='t-center'>畢生一心想考取功名、光宗耀祖，成為村莊的驕傲，<p class='t-center'>並藉由當官讓百姓安居樂業</p><p class='t-center'>可惜趙生參加過三次科舉制度考試，皆榜上無名。</p><p class='t-center'>在某次科舉考試因為身體患有疾病而無法前去考試，</p><p class='t-center'>於是就請了跟在自己身旁已久的書僮-趙生，</p><p class='t-center'>前去幫忙赴試；到了放榜當天，劉公子家外頭人聲鼎沸</p><p class='t-center'>鞭炮作響，高賀他考上官職，不過實際上理當是趙生考中，</p><p class='t-center'>但村子裡無人知曉，隔天，劉公子就這樣前去就任新官；</p><p class='t-center'>趙生也在昨夜突然銷聲匿跡，消失在這村子上……</p>"
+                },
+                "type":"left",
+                "title":"<h3 class='border_line'>傳說故事</h3>",
+                "explore":false
+            }
+        ],   
+        [
+            {
+                "class_name":"content",
+                "content_layout_type":{
+                    "type":"col-lg-12 col-12",
+                    "innerHTML":"<p class='t-center'>小河旁坐落著一個小村莊</p><p class='t-center'>而村子有一位自幼苦讀詩書的讀書人-劉公子，</p><p class='t-center'>畢生一心想考取功名、光宗耀祖，成為村莊的驕傲，<p class='t-center'>並藉由當官讓百姓安居樂業</p><p class='t-center'>可惜趙生參加過三次科舉制度考試，皆榜上無名。</p><p class='t-center'>在某次科舉考試因為身體患有疾病而無法前去考試，</p><p class='t-center'>於是就請了跟在自己身旁已久的書僮-趙生，</p><p class='t-center'>前去幫忙赴試；到了放榜當天，劉公子家外頭人聲鼎沸</p><p class='t-center'>鞭炮作響，高賀他考上官職，不過實際上理當是趙生考中，</p><p class='t-center'>但村子裡無人知曉，隔天，劉公子就這樣前去就任新官；</p><p class='t-center'>趙生也在昨夜突然銷聲匿跡，消失在這村子上……</p>"
+                },
+                "type":"left",
+                "title":"<h3 class='border_line'>傳說故事</h3>",
+                "explore":false
+            }
+        ],   
+        [
+            {
+                "class_name":"content",
+                "content_layout_type":{
+                    "type":"col-lg-12 col-12",
+                    "innerHTML":"<p class='t-center'>小河旁坐落著一個小村莊</p><p class='t-center'>而村子有一位自幼苦讀詩書的讀書人-劉公子，</p><p class='t-center'>畢生一心想考取功名、光宗耀祖，成為村莊的驕傲，<p class='t-center'>並藉由當官讓百姓安居樂業</p><p class='t-center'>可惜趙生參加過三次科舉制度考試，皆榜上無名。</p><p class='t-center'>在某次科舉考試因為身體患有疾病而無法前去考試，</p><p class='t-center'>於是就請了跟在自己身旁已久的書僮-趙生，</p><p class='t-center'>前去幫忙赴試；到了放榜當天，劉公子家外頭人聲鼎沸</p><p class='t-center'>鞭炮作響，高賀他考上官職，不過實際上理當是趙生考中，</p><p class='t-center'>但村子裡無人知曉，隔天，劉公子就這樣前去就任新官；</p><p class='t-center'>趙生也在昨夜突然銷聲匿跡，消失在這村子上……</p>"
+                },
+                "type":"left",
+                "title":"<h3 class='border_line'>歷史演進</h3>",
+                "explore":false
+            }
+        ],   
+        [
+            {
+                "class_name":"content",
+                "content_layout_type":{
+                    "type":"col-lg-12 col-12",
+                    "innerHTML":"<p class='t-center'>小河旁坐落著一個小村莊</p><p class='t-center'>而村子有一位自幼苦讀詩書的讀書人-劉公子，</p><p class='t-center'>畢生一心想考取功名、光宗耀祖，成為村莊的驕傲，<p class='t-center'>並藉由當官讓百姓安居樂業</p><p class='t-center'>可惜趙生參加過三次科舉制度考試，皆榜上無名。</p><p class='t-center'>在某次科舉考試因為身體患有疾病而無法前去考試，</p><p class='t-center'>於是就請了跟在自己身旁已久的書僮-趙生，</p><p class='t-center'>前去幫忙赴試；到了放榜當天，劉公子家外頭人聲鼎沸</p><p class='t-center'>鞭炮作響，高賀他考上官職，不過實際上理當是趙生考中，</p><p class='t-center'>但村子裡無人知曉，隔天，劉公子就這樣前去就任新官；</p><p class='t-center'>趙生也在昨夜突然銷聲匿跡，消失在這村子上……</p>"
+                },
+                "type":"left",
+                "title":"<h3 class='border_line'>歷史演進</h3>",
+                "explore":false
+            }
+        ]
+        
+    ],
+    
+    "about_us":{
+        "show":false
+    }
+}

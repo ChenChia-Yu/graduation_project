@@ -63,7 +63,7 @@
     height: 50px;
     width: 25%;
     background: #334137;
-    border-radius: 30px;
+    border-radius: 15px;
     right:10px;
 }
 
@@ -122,7 +122,7 @@ header .show{
     padding-bottom: 20px;
     padding-left: 20px;
     padding-right: 20px;
-    top:70px;
+    top:67px;
     right:10px;
     border-radius:30px;
     z-index:99;
@@ -144,6 +144,10 @@ header .show ul a{
     color:#334137;
     text-decoration: none;
     font-size: 25px;
+}
+
+.explore{
+    margin-top: 150px;
 }
 
 .explore h5{
@@ -170,8 +174,24 @@ header .show ul a{
 }
 
 /* global ----- set background color */
-.about_chiayi,.history,.temple_explore,.god_introduction,.name{
+.about_chiayi,.history,.temple_explore,.god_introduction,.name,.content{
     background: #55707D;
+}
+
+.content{
+    padding-top: 63px;
+}
+
+.content p{
+    color:#EEEEEE;
+}
+
+.content .vam{
+    padding-left: 121px;
+}
+
+.content .border_line{
+    margin-left: 121px;
 }
 
 /* global ----- set font size and color */
@@ -189,7 +209,7 @@ header .show ul a{
 }
 
 /* set padding and margin */
-.about_chiayi>div>div,.history>div>div,.temple_explore>div>div,.god_introduction>div>div,.name>div>div{
+.about_chiayi>div,.history>div,.temple_explore>div,.god_introduction>div,.name>div{
     margin-top: 225pt;
 }
 
@@ -201,6 +221,10 @@ header .show ul a{
     height: 100%;
     width:100%;
     background: #55707D;;
+}
+
+img#logo{
+    width: 50%;
 }
 
 .left_top_title{
@@ -281,7 +305,13 @@ img.chiayi_temple{
 /* header */
 
 header{
-    background: #961D16;
+    background: #334137;
+}
+
+.bgimg{
+    background-image: url('https://i.ytimg.com/vi/qApc5RV4CW0/maxresdefault.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 header h1{
@@ -338,59 +368,244 @@ header p{
     margin-top: 10px;
 }
 
-/* about_chiayi_header */
+/* div_app */
 
-
-/* .click_here{
-    width: 30%;
-    float:right;
+.content .title img.turkey_img{
+    float:left;
+    width: 100%;
 }
 
-.click_here *{
-    padding: 0 !important;
-    padding-right: 0 !important;
-    padding-left: 0 !important;
-    padding-bottom: 0 !important;
+.content .title h3,.content p{
+    /* float:left; */
+    color:#EEEEEE;
 }
 
-.delete .triangle{
+h3.border_line,h4.border_line{
+    float: left;
+    padding: 12px 31px 11px 32px;
+    position: relative;
+    border:2px #EEEEEE solid;
+}
+
+h3.border_line::before,h4.border_line::before{
+    content:'';
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    position: absolute;
+    border:2px #EEEEEE solid;
+}
+
+img.turkey_image{
+    cursor:pointer;
+}
+
+.explanation,.explanation_temple{
+    top: 10px;
+    width:70%;
+    /* right: 30px; */
+    /* left: 30px; */
+    /* height: 250px; */
+    background: #961D16;
+    position: absolute;
+    z-index: 20;
+    margin: 130px;
+    margin-top: 0;
+    padding: 45px;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+.explanation h3.border_line,.explanation_temple h3.border_line{
+    margin-left: 0;
+}
+
+.explanation p,.explanation_temple p{
+    word-break: break-all;
+}
+
+.rounded{
+    top:0;
+    width: 100%;
+    position: relative;
+    display:block !important;
+    margin: 0;
+}
+
+.triangle,.triangle_in_img,.triangle_on_img{
     width: 0;
     height: 0;
-    border-style: solid;
-    border-width: 0 30px 50px 30px;
-    border-color: transparent transparent white transparent;
-    float:right;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 50px solid #000;
+    float: left;
+    width: 0;
+    height: 0;
+    border-left: 17px solid transparent;
+    border-right: 17px solid transparent;
+    border-bottom: 30px solid #000;
+    margin: 3px;
+    cursor: pointer;
 }
 
-.delete p{
+.triangle_in_img,.triangle_on_img{
+    position: absolute;
+}
+
+.triangle_in_img:nth-of-type(1){
+    left:40%;
+}
+
+.triangle_in_img:nth-of-type(2){
+    left:30%;
+}
+
+.triangle_in_img:nth-of-type(3){
+    left:20%;
+}
+
+.triangle_in_img:nth-of-type(4){
+    top:230px;
+    left: 35%;
+}
+
+.triangle_on_img:nth-of-type(1){
+    top: 50px;
+    left:25%;
+}
+
+.triangle_on_img:nth-of-type(2){
+    top: 130px;
+    left:10%;
+}
+
+.triangle_on_img:nth-of-type(3){
+    top: 240px;
+    left:10%;
+}
+
+.triangle_on_img:nth-of-type(4){
+    top: 240px;
+    left:35%;
+}
+
+.triangle_on_img:nth-of-type(5){
+    top: 240px;
+    left:45%;
+}
+
+.triangle_on_img:nth-of-type(6){
+    top: 240px;
+    left:55%;
+}
+
+.triangle_on_img:nth-of-type(7){
+    top: 170px;
+    left:50%;
+}
+
+.triangle_on_img:nth-of-type(8){
+    top: 130px;
+    right:10%;
+}
+
+.triangle_on_img:nth-of-type(9){
+    top: 240px;
+    right:10%;
+}
+
+.explanation_temple .explanation_content{
+    margin-left: 15px;
+}
+
+.explanation_temple h5,.explanation_temple h3,.explanation_temple h4{
+    color: #EEEEEE;
+}
+
+.explanation_temple h5::before{
+    content: "";
+    display: inline-block;
+    background: #334137;
+    height: 20px;
+    width: 20px;
+    transform: rotate(45deg);
+}
+
+.explanation_temple h5::after{
+    content: "";
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    border: 2px solid #334137;
+    margin-left: -70px;
+    transform: rotate(45deg);
+}
+
+.explanation_temple h3.floor_title::before{
+    content: "";
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    background: #334137;
+    transform: rotate(45deg);
+}
+
+.explanation_temple h4.floor_content::before{
+    content: "";
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    border: 2px solid #334137;
+    transform: rotate(45deg);
+}
+
+.explanation_temple h4{
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+.explanation_temple h4.floor_content{
+    margin-top: 15px;
+}
+
+
+.temple_info{
+    float: left;
+    padding: 12px 31px 11px 32px;
+    position: relative;
+    border:2px #EEEEEE solid;
+}
+
+.temple_info::before{
+    content:'';
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    position: absolute;
+    border:2px #EEEEEE solid;
+}
+
+.temple_info h4{
+    color:#EEEEEE;
+}
+
+.traffic_info h4{
+    margin-left: 0 !important;
     color:white;
-} */
+}
 
-
-/* about chiayi */
-
-/* .about_chiayi{
-    background: rgb(230, 230, 230);
-
-} */
-
-
-
-/* history */
-
-
-
-/* temple_explore */
-
-
-
-/* god_introduction */
-
+.traffic_info p{
+    padding-right: 100px;
+    padding-left: 100px;
+    word-break: break-all;
+}
 
 
 /* name */
-
-
 .name img{
     border-radius: 20px;
     border: 1px solid #000;
