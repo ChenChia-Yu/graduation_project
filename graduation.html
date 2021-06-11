@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="FZYTK--GBK1-0.woff" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.2.0/vue-resource.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- loading -->
+    <div id="loading" class="position-fixed">
+        <div class="col-xl-12 col-12">
+            <div class="col-lg-3 col-3">
+                <img id="logo" src="logo.png" alt="">
+            </div>
+            <div class="col-lg-3 col-3 left_top_title position-relative">
+                <p class="position-absolute">與嘉義相遇</p>
+            </div>
+        </div>
+        <div class="chiayi_temple_div">
+            <img class="chiayi_temple" src="chiayi_temple.png" alt="">
+            <div class="turkey clearfix">
+                <p class="t-center loading">loading....</p>
+                <div class="col-lg-12 col-12">
+                    <div class="col-lg-10 col-10">
+                        <div class="progress">
+                            <div ref="divtest" id="divtest" class="color"></div>
+                        </div>
+                    </div>    
+                    <div class="col-lg-2 col-2">
+                        <p class="t-right percentage">0%</p>
+                    </div>
+                </div>
+            </div>
+            <!--    
+                <div class="click_here">
+                    <div class="col-lg-12 col-12">
+                        <div class="col-lg-6 col-6">
+                            <div class="triangle"></div>
+                        </div>
+                        <div class="col-lg-6 col-6">
+                            <p>下一頁按這裡會刪掉</p>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+
+    <header class="full-width clearfix" :class="{bgimg:bgimg}" id="header">
+        <div class="fixed-width">
+            <div class="col-xl-12 col-12">
+
+                <!-- logo -->
+                <div class="col-lg-3 col-3">
+                    <img id="logo" src="logo.png" alt="">
+                </div>
+
+                <!-- hamburger -->
+                <div v-if="data1.header.explore==false" class="col-lg-2 col-2 hamburger position-relative">
+                    <div class="hamburger_div position-absolute">
+                        <span></span>
+                    </div>
+                    <div class="show position-absolute">
+                        <ul>
+                            <template v-for="hrefs in href">
+                                <li><a href="javascript:void(0)" v-on:click="page(hrefs.href)">{{hrefs.href_name}}</a></li>
+                            </template>
+                        </ul>
+                    </div>
+                </div>
+            
+            </div>
+
+
+            <div class="col-xl-12 col-12 vam">
+
+                    <div v-html="data1.header.title" class="col-lg-6 col-12 title">
+                        <!-- <h1 class="t-center">{{data1.header.title}}</h1> -->
+                    </div>
+                    <template v-if="data1.header.explore==true">
+                        <div class="col-lg-6 col-12 img">
+                            <img :src="data1.header.image" alt="">
+                        </div>
+
+                        <!-- </template> -->
+
+                        <div class="col-lg-12 col-12">
+                                <div class="vertical_explore" v-on:click="explore">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <h5 class="t-center">啟程</h5>
+                                </div>
+                        </div>
+                    </template>    
+            </div>
+        </div>
+    </header>
+
+    <div id="div_app" class="full-width">
+        <div class="fixed-width">
+            <template v-for="data in data1">
+                <template v-for="dd in data">
+                    <div class="col-xl-12 col-12 vam" :class="dd.class_name">
+                        <template v-if="dd.type == 'left'">
+                            <div :class="dd.title_layout_type" v-html="">
+                                <div class="title" v-html="dd.title"></div>
+                                <div v-if="dd.explore == true" class="explore">
+                                    <h5 class="t-center"  v-on:click="explore(dd.class_name+'.json')"><span></span>探索<span></span></h5>
+                                </div>
+                            </div>
+                            <div v-if="dd.explore==true" :class="dd.content_layout_type.type" v-html="dd.content_layout_type.innerHTML"></div>
+                            <div v-else="dd.explore==false" style="float:right !important" :class="dd.content_layout_type.type" v-html="dd.content_layout_type.innerHTML"></div>
+                        </template>
+                        <template v-if="dd.type == 'right'">
+                            <div v-if="dd.explore==true" :class="dd.content_layout_type.type" v-html="dd.content_layout_type.innerHTML"></div>
+                            <div v-else="dd.explore==false" style="float:right !important" :class="dd.content_layout_type.type" v-html="dd.content_layout_type.innerHTML"></div>
+                            <div :class="dd.title_layout_type" v-html="">
+                                <div v-html="dd.title"></div>
+                                <div v-if="dd.explore == true" class="explore">
+                                    <h5 class="t-center"  v-on:click="explore(dd.class_name+'.json')"><span></span>探索<span></span></h5>
+                                </div>
+                            </div>   
+                        </template>
+                    </div>
+                </template>    
+            </template>
+        </div>
+    </div>
+    
+    <div v-if="data1.about_us.show==true" class="full-width clearfix name">
+        <div class="fixed-width">
+            <div class="col-xl-12 col-12 vam">
+                <div class="col-xl-3 col-6">
+                    <img src="https://elt.rti.org.tw/wp-content/uploads/2018/01/960x540_people.jpg" alt="">
+                    <p class="t-center">名子</p>
+                </div>    
+                <div class="col-xl-3 col-6">
+                    <img src="https://elt.rti.org.tw/wp-content/uploads/2018/01/960x540_people.jpg" alt="">
+                    <p class="t-center">名子</p>
+                </div>    
+                <div class="col-xl-3 col-6">
+                    <img src="https://elt.rti.org.tw/wp-content/uploads/2018/01/960x540_people.jpg" alt="">
+                    <p class="t-center">名子</p>
+                </div>    
+                <div class="col-xl-3 col-6">
+                    <img src="https://elt.rti.org.tw/wp-content/uploads/2018/01/960x540_people.jpg" alt="">
+                    <p class="t-center">名子</p>
+                </div>    
+            </div>
+            <div class="col-xl-12 col-12">
+                <h1>關於我們</h1>
+                <p>我們是一群從外地到嘉義念書的大學生，</p>
+                <p>希望藉由網頁帶領其他學生了解嘉義的歷史</p>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="full-width clearfix">
+        <div class="col-xl-12 col-12">
+            <div class="col-lg-3 col-6">
+                <img id="logo" src="logo.png" alt="">
+            </div>
+            <div class="col-lg-12 col-12">
+                <p class="t-center">城隍際遇製作團隊 &copy 2021copyright</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+<script>
+    let url="index.json";
+    axios_get();
+
+    let loading = new Vue({
+        el:"#loading",
+        data:{
+
+        },
+        mounted() {
+            this.$refs.divtest.addEventListener('animationend', () => {
+                $("#loading").fadeOut();
+                console.log("transition end");
+            })
+            console.log("XXX");
+        },
+        method: {
+            explore:function(e){
+                url = e + '.json';
+                axios_get();
+            }
+        }
+    })
+
+    let header_vue = new Vue({
+        el : "#header",
+        data:{
+            data1:"",
+            bg:{
+                background:'#961D16'
+            },
+            bgimg:false,
+            href:[]
+        },
+        methods:{
+            explore:function(){
+                $("html,body").animate({
+                    scrollTop:$(".about_chiayi").offset().top
+                },300)
+            },
+            page:function(e){
+                console.log(e);
+                url = e + '.json';
+                axios_get();
+            }
+        }
+        
+    });
+    let div_app = new Vue({
+        el:"#div_app",
+        data:{
+            data1:[],
+            url_change:""
+        },
+        created:{
+            
+        },
+        watch:{
+            data1:function(newValue,rawValue){
+                // if(newValue.includes('history')){
+                    
+                // }else if(newValue.includes('temple')){
+                    
+                // }
+                // history:function(){
+                // let x = document.getElementById('show_explnantion').addEventListener('click',this.explanation);
+                // console.log(x.innerHTML);
+                // console.log(x.length);
+                // for(var i=0;i<x.length;i++){
+                //     x[i].addEventListener('click',this.explanation);
+                // }
+            // }
+                console.log("XX");
+            }
+        },
+        methods:{
+            explore:function(e){
+                console.log(e);
+                url = e;
+                this.url_change = url;
+                axios_get();
+            },
+            // explanation:function(e){
+            //     console.log("XXXX");
+            // },
+            // history:function(){
+            //     let x = document.getElementsByClassName('show_explanation');
+            //     console.log(x.length);
+            //     for(var i=0;i<x.length;i++){
+            //         x[i].addEventListener('click',this.explanation);
+            //     }
+            // }
+        }
+    });
+    
+    let name_vue = new Vue({
+        el : ".name",
+        data:{
+            data1:"",
+            
+        },
+    });
+
+    //other function
+    
+    //clear explanation_panel
+    document.onclick = function(data){
+        console.log(data.target.getAttribute('class'));
+        if(data.target.getAttribute('id') != "tai_tsung_duan" && data.target.getAttribute('id') != "honorific_title"){
+            document.querySelector(".explanation").style.display = "none";
+        }
+        
+        if(data.target.getAttribute('class') != "triangle" && data.target.getAttribute('class') != "triangle_in_img"){
+            console.log("XXXX");
+            document.querySelector(".explanation_temple").style.display = "none";
+        }
+    }
+
+    //show explanation panel
+    function show_explanation(e){
+        document.querySelector(".explanation").style.display = "block";
+        if(e.getAttribute("id") == "tai_tsung_duan"){
+            // var x = document.getElementsByClassName("explanation");
+            // for(var i=0;i<x.length;i++){
+            //     x[i].children.children
+            // }
+            document.querySelector(".explanation_title").innerHTML = "戴潮春事件";
+            document.querySelector(".explanation_content").innerHTML = 
+            "<p>或作「戴萬生」事件</p><p>台灣清治時期三大民變之一，也是時間最久者，自1862年起至1864年平定</p><p>事件起因乃官府鎮壓天地會（又名八卦會）所致</p><p>影響範圍北至大甲，南至嘉義，遍布整個台灣中部</p><p>雖然起事者為戴潮春，因以此為名</p><p>由於當時清廷正與太平天國交戰</p><p>沒有餘力理會台灣民變，加上參與事件者包含各地大小地主</p><p>在起事當地具很有大的影響力</p><p>因此初期清國僅能依靠霧峰林家等地方鄉勇勢力抵抗</p><p>直到1863年丁曰健與林文察相繼赴台參戰後</p><p>戰情才急轉直下，於1864年初結束。</p>";
+        }else if(e.getAttribute("id") == "honorific_title"){
+            document.querySelector(".explanation_title").innerHTML = "敕封尊號";
+            document.querySelector(".explanation_content").innerHTML = 
+            "<p>清朝同治元年（1862年）間發生戴潮春之役，</p><p>戴軍舉眾圍攻諸羅城三次，眼看諸羅城就要攻破了</p><p>整個諸羅城人心惶惶</p><p>知縣白鸞卿到城隍廟請示城隍爺由知縣抽籤詩</p><p>城隍爺蒙示全句籤詩：「閤家人安泰，名利兩興昌，出外皆大吉，有禍不成殃」</p><p>由知縣解讀籤詩，告訴全城人民「有禍不城殃」</p><p>使得人心遂定保住全城</p><p>此事於同治十三年由欽差沈葆楨奏請朝廷加封城隍爺</p><p>因此在光緒元年（1875年），光緒皇帝敕封嘉義城隍「綏靖」</p><p>而有綏靖侯之稱，是臺灣唯一加封尊號的縣級城隍爺。</p>";
+        }
+    }
+
+    function temple(e){
+        document.querySelector(".explanation_temple").style.display = "block";
+        var id = e.getAttribute("id");
+        console.log(id);
+        if(id=="first_floor_A"){
+            document.querySelector(".explanation_temple .explanation_title").innerHTML = "後殿";
+            document.querySelector(".explanation_temple .explanation_content").innerHTML = "<h5><span></span><span></span>一樓</h5><h3 class='floor_title'><span></span>五路財神殿</h3><h4 class='floor_content'>主祀:東路財神蕭昇、南路財神陳酒宮、</h4><h4>中路財神趙公明、西路財神曹寶、</h4><h4>北路財神姚少司</h4>";
+        }else if(id=="first_floor_B"){
+            document.querySelector(".explanation_temple .explanation_title").innerHTML = "後殿";
+            document.querySelector(".explanation_temple .explanation_content").innerHTML = "<h5><span></span><span></span>一樓</h5><h3 class='floor_title'><span></span>媽祖殿</h3><h4 class='floor_content'>主祀:媽祖娘娘</h4><h4 class='floor_content'>陪祀: 右側: 城隍夫人、</h4><h4 class='mt-2' style='margin-left:40px'>左側: 註生娘娘</h4><h4 class='floor_content'>左右兩側: 十八司爺</h4>";
+        
+        }else if(id=="second_floor"){
+            document.querySelector(".explanation_temple .explanation_title").innerHTML = "後殿";
+            document.querySelector(".explanation_temple .explanation_content").innerHTML = "<h5><span></span><span></span>二樓</h5><h3 class='floor_title'><span></span>觀音佛祖殿</h3><h4 class='floor_content'>主祀: 觀音佛祖、彌勒佛</h4><h4 class='floor_content'>左右兩側: 十八羅漢</h4>";
+        
+        }else if(id=="third_floor"){
+            document.querySelector(".explanation_temple .explanation_title").innerHTML = "後殿";
+            document.querySelector(".explanation_temple .explanation_content").innerHTML = "<h5><span></span><span></span>三樓</h5><h3 class='floor_title'><span></span>水仙宮殿</h3><h4 class='floor_content'>主祀: 水仙尊王大禹</h4><h3 class='floor_title'><span></span>文昌殿</h3><h4 class='floor_content'>主祀: 文昌帝君</h4><h3 class='floor_title'><span></span>姻緣殿</h3><h4 class='floor_content'>主祀: 大婚宮、月下老人</h4>";
+        
+        }else if(id=="fourth_floor"){
+            document.querySelector(".explanation_temple .explanation_title").innerHTML = "後殿";
+            document.querySelector(".explanation_temple .explanation_content").innerHTML = "<h5><span></span><span></span>四樓</h5><h3 class='floor_title'><span></span>五恩主殿</h3><h4 class='floor_content'>主祀: 五恩主公</h4><h4>(關羽、呂洞賓、張單、王靈關、岳飛)</h4>";
+        
+        }else if(id=="fifth_floor"){
+            document.querySelector(".explanation_temple .explanation_title").innerHTML = "後殿";
+            document.querySelector(".explanation_temple .explanation_content").innerHTML = "<h5><span></span><span></span>五樓</h5><h3 class='floor_title'><span></span>三清殿</h3><h4 class='floor_content'>主祀: 三清道祖</h4><h4>(玉清元始王尊、上清靈寶王尊、太道清德王尊)</h4>";
+        }else if(id=="sixth_floor"){
+            document.querySelector(".explanation_temple .explanation_title").innerHTML = "後殿";
+            document.querySelector(".explanation_temple .explanation_content").innerHTML = "<h5><span></span><span></span>六樓</h5><h3 class='floor_title'><span></span>凌霄寶殿</h3><h4 class='floor_content'>主祀: 玉皇大帝</h4><h4>右側: 南斗星君、北側: 北斗星君</h4>";
+        }else if(id=="front"){
+            document.querySelector(".explanation_temple .explanation_title").innerHTML = "前殿";
+            document.querySelector(".explanation_temple .explanation_content").innerHTML = "<h3 class='floor_title'><span></span>正殿左側</h3><h4 class='floor_content'>主祀: 速報司爺</h4><h4>(中間)吉勝堂什家將:劉武差、柳將軍、</h4><h4>范將軍、洪大神、金大神</h4><h4>(武)魏判官(後):陰陽公、虎爺公</h4>";
+        }else if(id=="mid"){
+            document.querySelector(".explanation_temple .explanation_title").innerHTML = "前殿";
+            document.querySelector(".explanation_temple .explanation_content").innerHTML = "<h3 class='floor_title'><span></span>正殿</h3><h4 class='floor_content'>主祀: 正殿大城隍尊神、開基城隍尊神</h4><h4 class='floor_content'>陪祀: 藥師梳璃光佛、文判五官、</h4><h4>司爺、初創城隍廟周鐘瑄神像</h4>";
+            
+        }else if(id=="back"){
+            document.querySelector(".explanation_temple .explanation_title").innerHTML = "前殿";
+            document.querySelector(".explanation_temple .explanation_content").innerHTML = "<h3 class='floor_title'><span></span>正殿右翼</h3><h4 class='floor_content'>主祀: 福德正神</h4><h4 class='floor_content'>陪祀: 福德正神</h4><h4>(中間)吉德堂什家將:陳文差、甘將軍</h4><h4>謝將軍、劉大神、帆大神、</h4><h4>(文)李判官(後):陳聖王公</h4>";
+            
+        }else if(id=="pray"){
+            document.querySelector(".explanation_temple .explanation_title").innerHTML = "前殿";
+            document.querySelector(".explanation_temple .explanation_content").innerHTML = "<h3 class='floor_title'><span></span>拜殿</h3><h4 class='floor_content'>主祀: 城隍尊神</h4><h4 class='floor_content'>陪祀: 范謝將軍</h4>";
+            
+        }
+    }
+
+    function axios_get(){
+        axios.get(url)
+        .then(function(response){
+            console.log(response);
+            console.log(response.data);
+            header_vue.data1 = response.data;
+            div_app.data1 = response.data.topic;
+            name_vue.data1 = response.data;
+            if(url != 'index.json'){
+                header_vue.bgimg = true;
+                // div_app.history();
+            }
+            if(url == "about_chiayi.json"){
+                header_vue.href.splice(0);
+                header_vue.href.push({"href":"history","href_name":"歷史軌跡"});
+                header_vue.href.push({"href":"temple_explore","href_name":"城隍廟介紹"});
+                // document.querySelector("")
+            }else if(url == "history.json"){
+                header_vue.href.splice(0);
+                header_vue.href.push({"href":"about_chiayi","href_name":"關於嘉義"});
+                header_vue.href.push({"href":"temple_explore","href_name":"城隍廟介紹"});
+            }
+            else if(url == "temple_explore.json"){
+                header_vue.href.splice(0);
+                header_vue.href.push({"href":"about_chiayi","href_name":"關於嘉義"});
+                header_vue.href.push({"href":"history","href_name":"歷史軌跡"});
+            }
+                // if(url == "")
+        })
+        .catch(function(error){
+            console.log(error);
+        });
+    }    
+    
+</script>
+
+
+</html>
