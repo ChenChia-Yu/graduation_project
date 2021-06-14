@@ -6,16 +6,17 @@
         "explore" : false
     },
     "topic":[
+        
         [
             {
                 "class_name":"content",
                 "title_layout_type":"col-lg-12 col-12",
                 "content_layout_type":{
                     "type":"col-lg-12 col-12 vam",
-                    "innerHTML":"<div class='col-lg-6 col-6'><div class='explanation rounded' style='padding:20px;'><p>嘉義城隍廟建廟超過300年，</p><p>留下許多特有的碑扁文物</p><p>想知道每個文物背後，</p><p>又藏有哪些歷史意義與故事呢?</p><p>快來下載APP</p><p>跟我憶起探險尋廟有多少的珍藏的文物吧</p><p>GOGOGO~</p></div><img style='width:20%;' class='turkey_image' src='turkey.png'></div><div class='col-lg-6 col-6'><div class='div_color w-100 bg-white' style='height:500px;'></div></div>"
+                    "innerHTML":"<img class='explanation' id='triangle' src='./字卡/1.png'><div class='col-lg-6 col-6'><p class='temple_structure'>現今的城隍廟大多是以日治時期聘請到福建泉州大匠師王錦木來規劃設計，主體座向「座東朝西」，廟體建築風格「泉州溪底派」。正殿、後殿夾拜亭之「工」字形平面建築格局。整體建築共分三川殿、拜亭、正殿、後殿四大部份，以前殿作為拜亭與正殿的統稱，其最大特色是在正殿部份安設許多看架斗栱，屋頂形式皆為重簷，正殿步口及次間看架斗栱，全由榫卯鬥成，不用一釘一鉚，巧奪天工，莊嚴肅穆，也是王錦木匠師首席代表第一個建築作品。</p></div></div><div class='col-lg-6 col-6'><div class='col-lg-12 col-12'><div onClick='show_explanation(this)' class='triangle' data-id='_1_1'></div><div onClick='show_explanation(this)' class='triangle' data-id='_1_2'></div><div onClick='show_explanation(this)' class='triangle' data-id='_2'></div><div onClick='show_explanation(this)' class='triangle' data-id='_3'></div><div onClick='show_explanation(this)' class='triangle' data-id='_4'></div><div onClick='show_explanation(this)' class='triangle' data-id='_5'></div><div onClick='show_explanation(this)' class='triangle' data-id='_6'></div></div><div class='col-lg-12 col-12 inner_temple'><div onClick='show_explanation(this)' class='triangle' data-id='_right'></div><div data-id='_mid' onClick='show_explanation(this)' class='triangle'></div><div data-id='_left' onClick='show_explanation(this)' class='triangle'></div><div data-id='_pray' onClick='show_explanation(this)' class='triangle'></div><img class='w-100' src='temple_picture1.png'></div></div>"
                 },
                 "type":"left",
-                "title":"<h3 class='border_line'>下載</h3>",
+                "title":"<div class='col-lg-12 col-12 vam'><div class='col-lg-1 col-1'><h5>廟宇特色</h5><img class='turkey_img' src='turkey.png'></div><div class='col-lg-11 col-11'><p class='t-left'>城隍廟修建多次，後殿變成六層樓高，好多神明啊!</p></div>",
                 "explore":false
             }
         ],
@@ -25,10 +26,10 @@
                 "title_layout_type":"col-lg-12 col-12",
                 "content_layout_type":{
                     "type":"col-lg-12 col-12 vam",
-                    "innerHTML":"<div class='explanation_temple'><div class='col-lg-12 col-12'><h3 class='border_line explanation_title'></h3></div><div class='explanation_content'></div></div><div class='col-lg-6 col-6'><p>現今的城隍廟大多是以日治時期聘請到福建泉州大匠師王錦木來規劃設計，主體座向「座東朝西」，廟體建築風格「泉州溪底派」。正殿、後殿夾拜亭之「工」字形平面建築格局。整體建築共分三川殿、拜亭、正殿、後殿四大部份，以前殿作為拜亭與正殿的統稱，其最大特色是在正殿部份安設許多看架斗栱，屋頂形式皆為重簷，正殿步口及次間看架斗栱，全由榫卯鬥成，不用一釘一鉚，巧奪天工，莊嚴肅穆，也是王錦木匠師首席代表第一個建築作品。</p></div><div class='col-lg-6 col-6'><div class='col-lg-12 col-12'><div onClick='temple(this)' class='triangle' id='first_floor_A'></div><div onClick='temple(this)' class='triangle' id='first_floor_B'></div><div onClick='temple(this)' class='triangle' id='second_floor'></div><div onClick='temple(this)' class='triangle' id='third_floor'></div><div onClick='temple(this)' class='triangle' id='fourth_floor'></div><div onClick='temple(this)' id='fifth_floor' class='triangle'></div><div onClick='temple(this)' id='sixth_floor' class='triangle'></div></div><div class='col-lg-12 col-12'><div id='front' onClick='temple(this)' class='triangle_in_img'></div><div id='mid' onClick='temple(this)' class='triangle_in_img'></div><div id='back' onClick='temple(this)' class='triangle_in_img'></div><div id='pray' onClick='temple(this)' class='triangle_in_img'></div><img class='w-100' src='temple_picture1.png'></div></div>"
+                    "innerHTML":"<div class='col-lg-12 col-12'><div class='col-lg-9 col-9'><p>嘉義城隍廟，由兩位大師林添木、 陳專友各在拜亭的左右兩側展現自己交趾陶的技藝，特別是在拜殿「至誠前知」匾額下方也分屬兩人對場之作，造就出交趾陶界有名「拚場」，由陳專友的《群仙會》對林添木的《八仙祝壽》，是罕見的技藝拚場，作品細膩傳神、價值非凡，這場技藝作品的比拚也是絕無僅有，已傳為佳話。</p></div><div class='col-lg-3 col-3'><img class='turkey_image feet' onClick='show_foot()' src='turkey.png'></div><div class='col-lg-12 col-12'><div class='col-lg-4 col-4'><img src='https://fs1.shop123.com.tw/200541/upload/product/2005416944pic_outside_437513.jpg'><p class='mt-5'>虎門交趾陶</p><p>林添木，虎邊天井水車堵由內而外分別為&lt&lt狸貓換太子&lt&lt、&lt&lt古城會&lt&lt、&lt&lt伯邑考進貢&lt&lt，以三則故事為題材所做出的作品</p></div><div class='col-lg-4 col-4'><img src='https://fs1.shop123.com.tw/200541/upload/product/2005416944pic_outside_437513.jpg'><p class='mt-5'>虎門交趾陶</p><p>林添木，虎邊天井水車堵由內而外分別為&lt&lt狸貓換太子&gt&gt、&lt&lt古城會&gt&gt、&lt&lt伯邑考進貢&gt&gt，以三則故事為題材所做出的作品</p></div><div class='col-lg-4 col-4'><img src='https://fs1.shop123.com.tw/200541/upload/product/2005416944pic_outside_437513.jpg'><p class='mt-5'>拜殿「至誠前知」匾</p><p></p>額下方交趾陶:<p>由陳專友的&lt&lt群仙會&gt&gt對林添木的&lt&lt八仙祝壽&gt&gt，是絕無僅有的珍寶之一</p></div></div><div class='col-lg-9 col-9' style='float:right;'><div class='foot_explanation'><p>交趾陶又名嘉義燒，是華南與臺灣傳統建築（如廟宇）的裝飾，源自唐三彩，是一種低溫彩釉軟陶，主要都在民間默默發展與延續，現在依然可在廟宇內欣賞到交趾陶，後來創作題材受限於傳統，少有新意，遂逐漸沒落。</p></div></div>"
                 },
                 "type":"left",
-                "title":"<div class='col-lg-12 col-12 vam'><div class='col-lg-1 col-1'><img class='turkey_img' src='turkey.png'></div><div class='col-lg-11 col-11'><p class='t-left'>城隍廟修建多次，變成六層樓高，好多神明啊!</p></div>",
+                "title":"<h3 class='border_line'>交趾陶技藝</h3>",
                 "explore":false
             }
         ],
@@ -38,10 +39,10 @@
                 "title_layout_type":"col-lg-12 col-12",
                 "content_layout_type":{
                     "type":"col-lg-12 col-12 vam",
-                    "innerHTML":"<div class='explanation_temple_plaque'><div class='col-lg-12 col-12'><h3 class='border_line explanation_title'></h3></div><div class='explanation_content'></div></div><div class='col-lg-6 col-6'><img style='width:20%;display:block;margin:auto;' onClick='open_app_exhibition()' class='turkey_image' src='turkey.png'><div class='col-lg-12 col-12'><div class='app_exhibition'><p class='t-center'>快來看看文物介紹與發覺未知的文物吧!</p><p class='t-center'>AR導覽時還能看到文物的不同介紹喔!</p></div></div></div><div class='col-lg-6 col-6'><div id='plaque1' onClick='plaque(this)' class='triangle_on_img'></div><div id='plaque2' onClick='plaque(this)' class='triangle_on_img'></div><div id='plaque3' onClick='plaque(this)' class='triangle_on_img'></div><div id='plaque4' onClick='plaque(this)' class='triangle_on_img'></div><div id='plaque5' onClick='plaque(this)' class='triangle_on_img'></div><div id='plaque6' onClick='plaque(this)' class='triangle_on_img'></div><div  id='plaque7'onClick='plaque(this)' class='triangle_on_img'></div><div id='plaque8' onClick='plaque(this)' class='triangle_on_img'></div><div id='plaque9' onClick='plaque(this)' class='triangle_on_img'></div><img src='temple_picture1.png'></div>"
+                    "innerHTML":"<img class='explanation' id='triangle_on_img' src='./字卡/1.png'><div class='col-lg-6 col-6'><img style='width:20%;display:block;margin:auto;' onClick='open_app_exhibition()' class='turkey_image' src='turkey.png'><div class='col-lg-12 col-12'><div class='app_exhibition'><p class='t-center'>快來看看文物介紹與發覺未知的文物吧!</p><p class='t-center'>AR導覽時還能看到文物的不同介紹喔!</p></div></div></div><div class='col-lg-6 col-6'><div data-id='_plaque1' onClick='show_explanation(this)' class='triangle_on_img'></div><div data-id='_plaque2' onClick='show_explanation(this)' class='triangle_on_img'></div><div data-id='_plaque4' onClick='show_explanation(this)' class='triangle_on_img'></div><div data-id='_plaque6' onClick='show_explanation(this)' class='triangle_on_img'></div><div data-id='_plaque7' onClick='show_explanation(this)' class='triangle_on_img'></div><img src='temple_picture1.png'></div>"
                 },
                 "type":"left",
-                "title":"<h3 class='border_line'>下載</h3>",
+                "title":"<h3 class='border_line'>匾額文物</h3>",
                 "explore":false
             }
         ],

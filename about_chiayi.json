@@ -13,7 +13,7 @@
                 "title_layout_type":"col-lg-12 col-12",
                 "content_layout_type":{
                     "type":"col-lg-12 col-12",
-                    "innerHTML":"<img src='https://i.ytimg.com/vi/KKITUudusC0/maxresdefault.jpg' alt=''>"
+                    "innerHTML":"<img class='Taiwan_map' src='Taiwan_map.jpg' alt=''>"
                 },
                 "type":"left",
                 "explore":false

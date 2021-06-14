@@ -109,6 +109,31 @@
 
     <div id="div_app" class="full-width">
         <div class="fixed-width">
+            <div v-if="QRcode=='yes'" class="col-xl-12 col-12 content">
+                <div class="col-lg-12 col-12">
+                    <div class="title">
+                        <h3 class="border_line">下載</h3>
+                    </div> <!---->
+                </div> 
+                <div class="col-lg-12 col-12 vam">
+                    <div class="col-lg-6 col-6">
+                        <div class="explanation rounded" style="padding: 20px; display: none;">
+                            <p>嘉義城隍廟建廟超過300年，</p>
+                            <p>留下許多特有的碑扁文物</p>
+                            <p>想知道每個文物背後，</p>
+                            <p>又藏有哪些歷史意義與故事呢?</p>
+                            <p>快來下載APP</p>
+                            <p>跟我憶起探險尋廟有多少的珍藏的文物吧</p>
+                            <p>GOGOGO~</p>
+                        </div>
+                        <img style="width:20%;" class="turkey_image" src="turkey.png">
+                    </div>
+                    <div class="col-lg-6 col-6">
+                        <img src="QRcode.png" alt="">
+                    </div>
+                </div> <!---->
+            </div>
+            
             <template v-for="data in data1">
                 <template v-for="dd in data">
                     <div class="col-xl-12 col-12 vam" :class="dd.class_name">
@@ -168,9 +193,6 @@
     
     <footer class="full-width clearfix">
         <div class="col-xl-12 col-12">
-            <div class="col-lg-3 col-6">
-                <img id="logo" src="logo.png" alt="">
-            </div>
             <div class="col-lg-12 col-12">
                 <p class="t-center">城隍際遇製作團隊 &copy 2021copyright</p>
             </div>
@@ -200,7 +222,7 @@
                     duration: 4000,
                     easing: 'swing',
                     step: function (now) {
-                        $(this).text(Math.ceil(now));
+                        $(this).text(Math.ceil(now) + "%");
                     }
                 });
             });
@@ -228,7 +250,7 @@
         methods:{
             explore:function(){
                 $("html,body").animate({
-                    scrollTop:$(".about_chiayi").offset().top
+                    scrollTop:$(".about_chiayi").offset().top + 220
                 },300)
             },
             page:function(e){
@@ -243,7 +265,8 @@
         el:"#div_app",
         data:{
             data1:[],
-            url_change:""
+            url_change:"",
+            QRcode:"yes"
         },
         created:{
             
@@ -298,27 +321,39 @@
     
     //clear explanation_panel
     document.onclick = function(data){
-        console.log(data.target.getAttribute('class'));
-        if(data.target.getAttribute('id') != "tai_tsung_duan" && data.target.getAttribute('id') != "honorific_title" && url == "history.json"){
-            document.querySelector(".explanation").style.display = "none";
-        }
-
-        if(data.target.getAttribute('id') != "surprise" && url == "history.json"){
-            document.querySelector(".explanation_surprise").style.display = "none";
-        }
-
-        if(data.target.getAttribute('id') != "temple_history" && url == "history.json"){
-            document.querySelector(".explanation_temple_history").style.display = "none";
+        console.log(data.target.getAttribute('data-id'));
+        if(data.target.getAttribute('data-id') == '' || data.target.getAttribute('data-id') == undefined || data.target.getAttribute('data-id') == null){
+            var explain = document.getElementsByClassName("explanation");
+            console.log(explain.length);
+            for(i=0;i<explain.length;i++){
+                explain[i].style.display = "none";
+            }
         }
         
-        if(data.target.getAttribute('class') != "triangle" && data.target.getAttribute('class') != "triangle_in_img" && url == "temple_explore.json"){
-            console.log("XXXX");
-            document.querySelector(".explanation_temple").style.display = "none";
+        if(data.target.getAttribute('class').includes("feet") == false && url == "temple_explore.json"){
+            document.querySelector(".foot_explanation").style.display = "none";
         }
+        // console.log(data.target.getAttribute('class'));
+        // if(data.target.getAttribute('id') != "tai_tsung_duan" && data.target.getAttribute('id') != "honorific_title" && url == "history.json"){
+        //     document.querySelector(".explanation").style.display = "none";
+        // }
 
-        if(data.target.getAttribute('class') != "triangle_on_img" && url == "temple_explore.json"){
-            document.querySelector(".explanation_temple_plaque").style.display = "none";
-        }
+        // if(data.target.getAttribute('id') != "surprise" && url == "history.json"){
+        //     document.querySelector(".explanation_surprise").style.display = "none";
+        // }
+
+        // if(data.target.getAttribute('id') != "temple_history" && url == "history.json"){
+        //     document.querySelector(".explanation_txt").style.display = "none";
+        // }
+        
+        // if(data.target.getAttribute('class') != "triangle" && data.target.getAttribute('class') != "triangle_in_img" && url == "temple_explore.json"){
+        //     console.log("XXXX");
+        //     document.querySelector(".explanation_temple").style.display = "none";
+        // }
+
+        // if(data.target.getAttribute('class') != "triangle_on_img" && url == "temple_explore.json"){
+        //     document.querySelector(".explanation_temple_plaque").style.display = "none";
+        // }
     }
 
     //show app_exhibition
@@ -328,32 +363,31 @@
 
     //show explanation panel
     function show_explanation(e){
-        document.querySelector(".explanation").style.display = "block";
-        if(e.getAttribute("id") == "tai_tsung_duan"){
-            // var x = document.getElementsByClassName("explanation");
-            // for(var i=0;i<x.length;i++){
-            //     x[i].children.children
-            // }
-            document.querySelector(".explanation_title").innerHTML = "戴潮春事件";
-            document.querySelector(".explanation_content").innerHTML = 
-            "<p>或作「戴萬生」事件</p><p>台灣清治時期三大民變之一，也是時間最久者，自1862年起至1864年平定</p><p>事件起因乃官府鎮壓天地會（又名八卦會）所致</p><p>影響範圍北至大甲，南至嘉義，遍布整個台灣中部</p><p>雖然起事者為戴潮春，因以此為名</p><p>由於當時清廷正與太平天國交戰</p><p>沒有餘力理會台灣民變，加上參與事件者包含各地大小地主</p><p>在起事當地具很有大的影響力</p><p>因此初期清國僅能依靠霧峰林家等地方鄉勇勢力抵抗</p><p>直到1863年丁曰健與林文察相繼赴台參戰後</p><p>戰情才急轉直下，於1864年初結束。</p>";
-        }else if(e.getAttribute("id") == "honorific_title"){
-            document.querySelector(".explanation_title").innerHTML = "敕封尊號";
-            document.querySelector(".explanation_content").innerHTML = 
-            "<p>清朝同治元年（1862年）間發生戴潮春之役，</p><p>戴軍舉眾圍攻諸羅城三次，眼看諸羅城就要攻破了</p><p>整個諸羅城人心惶惶</p><p>知縣白鸞卿到城隍廟請示城隍爺由知縣抽籤詩</p><p>城隍爺蒙示全句籤詩：「閤家人安泰，名利兩興昌，出外皆大吉，有禍不成殃」</p><p>由知縣解讀籤詩，告訴全城人民「有禍不城殃」</p><p>使得人心遂定保住全城</p><p>此事於同治十三年由欽差沈葆楨奏請朝廷加封城隍爺</p><p>因此在光緒元年（1875年），光緒皇帝敕封嘉義城隍「綏靖」</p><p>而有綏靖侯之稱，是臺灣唯一加封尊號的縣級城隍爺。</p>";
-        }   
+        var id = "#" + e.getAttribute('class');
+        var explain_class = e.getAttribute('class');
+        var data_id = e.getAttribute('data-id');
+        if(id.includes('history_event')){
+            id = "#history_event";
+            explain_class = "history_event";
+        }
+
+        if(id.includes("surprise")){
+            id = "#surprise";
+            explain_class="surprise";
+        }
+
+        var explain = document.querySelector(id);
+        explain.style.display = "block";
+        explain.src = "./字卡/" + explain_class + data_id + ".png";
+
     }
 
-    function show_surprise(e){
-        document.querySelector(".explanation_surprise").style.display="block";
-        document.querySelector(".explanation_surprise .explanation_title").innerHTML = "彩蛋";
-        document.querySelector(".explanation_surprise .explanation_content").innerHTML = "<p class='t-center'>在放榜當天夜晚，</p><p class='t-center'>劉公子的手下因為擔心趙生會搶了劉公子的官職，</p><p class='t-center'>趁著趙生去幫劉公子跑腿時，在村莊河邊橋上埋伏他</p><p class='t-center'>並趁著他不注意將他推下河裡，趙生不斷掙扎後，慢慢的沉入河中</p><p class='t-center'>劉公子得知後震怒，並下令立刻開除他</p><p class='t-center'>並不允許任何有關消息透露出去。</p>"
-        
+    function show_foot(){
+        document.querySelector(".foot_explanation").style.display = "block";
     }
-
     function show_temple_history(e){
-        document.querySelector(".explanation_temple_history").style.display="block";
-        document.querySelector(".explanation_temple_history .explanation_content").innerHTML = "<p>城隍信仰是從最早自然神護城牆河的崇敬，變成人格神為護國安民消災降福之崇敬，到了明朝朱元璋的理念，城隍亦轉陰間司法神為評斷善惡與仲裁的崇敬</p>";
+        document.querySelector(".explanation_txt").style.display="block";
+        document.querySelector(".explanation_txt .explanation_content").innerHTML = "<p>城隍信仰是從最早自然神護城牆河的崇敬，變成人格神為護國安民消災降福之崇敬，到了明朝朱元璋的理念，城隍亦轉陰間司法神為評斷善惡與仲裁的崇敬</p>";
 
     }
     function temple(e){
@@ -445,22 +479,34 @@
             name_vue.data1 = response.data;
             if(url != 'index.json'){
                 header_vue.bgimg = true;
+                div_app.QRcode = "yes";
                 // div_app.history();
+            }else{
+                header_vue.bgimg = false;
             }
             if(url == "about_chiayi.json"){
                 header_vue.href.splice(0);
+                header_vue.href.push({"href":"index","href_name":"返回首頁"});
                 header_vue.href.push({"href":"history","href_name":"歷史軌跡"});
                 header_vue.href.push({"href":"temple_explore","href_name":"城隍廟介紹"});
+                div_app.QRcode = "no";
+
                 // document.querySelector("")
             }else if(url == "history.json"){
                 header_vue.href.splice(0);
+                header_vue.href.push({"href":"index","href_name":"返回首頁"});
                 header_vue.href.push({"href":"about_chiayi","href_name":"關於嘉義"});
                 header_vue.href.push({"href":"temple_explore","href_name":"城隍廟介紹"});
+                div_app.QRcode = "no";
+
             }
             else if(url == "temple_explore.json"){
                 header_vue.href.splice(0);
+                header_vue.href.push({"href":"index","href_name":"返回首頁"});
                 header_vue.href.push({"href":"about_chiayi","href_name":"關於嘉義"});
                 header_vue.href.push({"href":"history","href_name":"歷史軌跡"});
+                div_app.QRcode = "no";
+
             }
                 // if(url == "")
         })
